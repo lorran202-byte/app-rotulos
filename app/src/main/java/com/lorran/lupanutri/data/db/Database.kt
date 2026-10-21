@@ -8,7 +8,10 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.Insert
 import androidx.room.Upsert
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.flow.Flow
 
 @Entity(tableName = "products")
@@ -57,12 +60,62 @@ interface ProductDao {
     suspend fun delete(code: String)
 }
 
-@Database(entities = [ProductEntity::class], version = 1, exportSchema = true)
+@Entity(tableName = "shopping_items")
+data class ShoppingItem(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val text: String,
+    val code: String?,
+    val checked: Boolean = false,
+    val createdAt: Long,
+)
+
+@Dao
+interface ShoppingDao {
+    @Query("SELECT * FROM shopping_items ORDER BY checked ASC, createdAt DESC")
+    fun observeAll(): Flow<List<ShoppingItem>>
+
+    @Insert
+    suspend fun insert(item: ShoppingItem): Long
+
+    @Query("SELECT COUNT(*) FROM shopping_items WHERE code = :code AND checked = 0")
+    suspend fun countOpen(code: String): Int
+
+    @Query("SELECT COUNT(*) FROM shopping_items WHERE code = :code AND checked = 0")
+    fun observeOpen(code: String): Flow<Int>
+
+    @Query("UPDATE shopping_items SET checked = :checked WHERE id = :id")
+    suspend fun setChecked(id: Long, checked: Boolean)
+
+    @Query("DELETE FROM shopping_items WHERE id = :id")
+    suspend fun delete(id: Long)
+
+    @Query("DELETE FROM shopping_items WHERE code = :code AND checked = 0")
+    suspend fun deleteOpenByCode(code: String)
+
+    @Query("DELETE FROM shopping_items WHERE checked = 1")
+    suspend fun clearChecked()
+}
+
+@Database(entities = [ProductEntity::class, ShoppingItem::class], version = 2, exportSchema = true)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun products(): ProductDao
+    abstract fun shopping(): ShoppingDao
 
     companion object {
+        private val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "CREATE TABLE IF NOT EXISTS `shopping_items` (" +
+                        "`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                        "`text` TEXT NOT NULL, `code` TEXT, " +
+                        "`checked` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL)"
+                )
+            }
+        }
+
         fun build(context: Context): AppDatabase =
-            Room.databaseBuilder(context, AppDatabase::class.java, "lupa.db").build()
+            Room.databaseBuilder(context, AppDatabase::class.java, "lupa.db")
+                .addMigrations(MIGRATION_1_2)
+                .build()
     }
 }

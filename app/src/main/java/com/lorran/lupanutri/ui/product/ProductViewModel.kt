@@ -6,6 +6,7 @@ import com.lorran.lupanutri.data.Fetch
 import com.lorran.lupanutri.data.Profile
 import com.lorran.lupanutri.data.ProductRepository
 import com.lorran.lupanutri.data.ProfileStore
+import com.lorran.lupanutri.data.ShoppingRepository
 import com.lorran.lupanutri.data.model.Product
 import com.lorran.lupanutri.domain.Scorer
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -33,6 +34,7 @@ sealed interface AltUi {
 class ProductViewModel(
     private val repo: ProductRepository,
     profileStore: ProfileStore,
+    private val shopping: ShoppingRepository,
     private val code: String,
 ) : ViewModel() {
 
@@ -44,6 +46,12 @@ class ProductViewModel(
 
     val profile: StateFlow<Profile> = profileStore.profile.stateIn(viewModelScope, SharingStarted.Eagerly, Profile())
     val isFavorite: StateFlow<Boolean> = repo.isFavorite(code).stateIn(viewModelScope, SharingStarted.Eagerly, false)
+    val inList: StateFlow<Boolean> = shopping.isInList(code).stateIn(viewModelScope, SharingStarted.Eagerly, false)
+
+    fun toggleList() {
+        val p = (ui.value as? ProductUi.Loaded)?.product ?: return
+        viewModelScope.launch { if (inList.value) shopping.removeProduct(p.code) else shopping.addProduct(p) }
+    }
 
     init { load() }
 

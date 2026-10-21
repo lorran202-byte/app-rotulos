@@ -36,6 +36,8 @@ import androidx.compose.material.icons.outlined.RemoveCircleOutline
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material.icons.outlined.SearchOff
 import androidx.compose.material.icons.outlined.Share
+import androidx.compose.material.icons.outlined.AddShoppingCart
+import androidx.compose.material.icons.outlined.RemoveShoppingCart
 import androidx.compose.material.icons.outlined.WarningAmber
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -91,11 +93,12 @@ fun ProductScreen(
     onEdit: () -> Unit,
 ) {
     val vm: ProductViewModel = viewModel(key = "product-$code") {
-        ProductViewModel(app.repository, app.profileStore, code)
+        ProductViewModel(app.repository, app.profileStore, app.shopping, code)
     }
     val ui by vm.ui.collectAsStateWithLifecycle()
     val profile by vm.profile.collectAsStateWithLifecycle()
     val fav by vm.isFavorite.collectAsStateWithLifecycle()
+    val inList by vm.inList.collectAsStateWithLifecycle()
     val alts by vm.alts.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
@@ -133,6 +136,13 @@ fun ProductScreen(
                             }
                             context.startActivity(Intent.createChooser(send, "Compartilhar"))
                         }) { Icon(Icons.Outlined.Share, "Compartilhar") }
+                        IconButton(onClick = vm::toggleList) {
+                            Icon(
+                                if (inList) Icons.Outlined.RemoveShoppingCart else Icons.Outlined.AddShoppingCart,
+                                contentDescription = if (inList) "Tirar da lista de compras" else "Pôr na lista de compras",
+                                tint = if (inList) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                            )
+                        }
                         IconButton(onClick = vm::toggleFavorite) {
                             Icon(
                                 if (fav) Icons.Outlined.Favorite else Icons.Outlined.FavoriteBorder,

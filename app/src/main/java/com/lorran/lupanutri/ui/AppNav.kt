@@ -3,8 +3,8 @@ package com.lorran.lupanutri.ui
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.FavoriteBorder
-import androidx.compose.material.icons.outlined.History
+import androidx.compose.material.icons.outlined.BookmarkBorder
+import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.QrCodeScanner
 import androidx.compose.material.icons.outlined.Search
@@ -27,21 +27,21 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.lorran.lupanutri.LupaApp
-import com.lorran.lupanutri.ui.lists.FavoritesScreen
-import com.lorran.lupanutri.ui.lists.HistoryScreen
+import com.lorran.lupanutri.ui.lists.SavedScreen
 import com.lorran.lupanutri.ui.manual.ManualScreen
 import com.lorran.lupanutri.ui.product.ProductScreen
 import com.lorran.lupanutri.ui.profile.ProfileScreen
 import com.lorran.lupanutri.ui.scan.ScanScreen
 import com.lorran.lupanutri.ui.search.SearchScreen
+import com.lorran.lupanutri.ui.shopping.ShoppingScreen
 
 private data class Tab(val route: String, val label: String, val icon: ImageVector)
 
 private val TABS = listOf(
     Tab("scan", "Escanear", Icons.Outlined.QrCodeScanner),
     Tab("search", "Buscar", Icons.Outlined.Search),
-    Tab("history", "Histórico", Icons.Outlined.History),
-    Tab("favorites", "Favoritos", Icons.Outlined.FavoriteBorder),
+    Tab("shopping", "Lista", Icons.Outlined.ShoppingCart),
+    Tab("saved", "Salvos", Icons.Outlined.BookmarkBorder),
     Tab("profile", "Perfil", Icons.Outlined.Person),
 )
 
@@ -88,11 +88,11 @@ fun AppNav(app: LupaApp) {
             composable("search") {
                 SearchScreen(app, onOpen = { nav.openProduct(it) })
             }
-            composable("history") {
-                HistoryScreen(app, onOpen = { nav.openProduct(it) })
+            composable("shopping") {
+                ShoppingScreen(app, onOpen = { nav.openProduct(it) })
             }
-            composable("favorites") {
-                FavoritesScreen(app, onOpen = { nav.openProduct(it) })
+            composable("saved") {
+                SavedScreen(app, onOpen = { nav.openProduct(it) })
             }
             composable("profile") {
                 ProfileScreen(app)

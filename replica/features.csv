@@ -13,7 +13,7 @@ F11,Perfil,Objetivo que muda a nota,should,feito
 F12,Perfil,Restrições alimentares,must,feito
 F13,Busca,Buscar por nome ou marca,should,feito
 F14,Produto,Alternativas melhores da mesma categoria,should,feito
-F15,Lista,Lista de compras,could,todo
+F15,Lista,Lista de compras,could,feito
 F16,Cadastro,Cadastrar produto que não está na base (manual),should,feito
 F17,Produto,Compartilhar nota do produto,could,feito
 F18,Geral,Funciona sem login e sem limite diário,must,feito
