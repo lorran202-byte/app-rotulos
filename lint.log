@@ -1,0 +1,40 @@
+> Task :app:buildKotlinToolingMetadata UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:generateReleaseResValues UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :app:packageReleaseResources UP-TO-DATE
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+> Task :app:processReleaseMainManifest UP-TO-DATE
+> Task :app:processReleaseManifest UP-TO-DATE
+> Task :app:processReleaseManifestForPackage UP-TO-DATE
+> Task :app:processReleaseResources UP-TO-DATE
+> Task :app:kspReleaseKotlin UP-TO-DATE
+> Task :app:compileReleaseKotlin UP-TO-DATE
+> Task :app:javaPreCompileRelease UP-TO-DATE
+> Task :app:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:generateReleaseLintReportModel
+> Task :app:bundleReleaseClassesToCompileJar UP-TO-DATE
+> Task :app:preReleaseUnitTestBuild UP-TO-DATE
+> Task :app:generateReleaseUnitTestLintModel
+> Task :app:lintAnalyzeReleaseUnitTest
+> Task :app:lintAnalyzeRelease
+
+> Task :app:lintReportRelease
+Wrote HTML report to file:///home/runner/work/app-rotulos/app-rotulos/app/build/reports/lint-results-release.html
+
+> Task :app:lintRelease
+
+> Task :app:copyReleaseLintReports
+Copying lint text report to /home/runner/work/app-rotulos/app-rotulos/app/build/reports/lint-results-release.txt
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1792617090756.json
+
+BUILD SUCCESSFUL in 30s
+27 actionable tasks: 7 executed, 20 up-to-date
