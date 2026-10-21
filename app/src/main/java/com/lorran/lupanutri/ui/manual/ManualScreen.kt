@@ -177,7 +177,7 @@ class ManualViewModel(private val app: LupaApp, private val code: String) : View
                     }
                 }
             } catch (e: Exception) {
-                "Não deu para ler a foto. Tente outra vez."
+                "Não deu para ler a foto. Na primeira vez o celular precisa de internet para baixar o leitor de texto; tente de novo em instantes."
             }
             reading = false
         }
