@@ -2,6 +2,26 @@
 
 package com.lorran.lupanutri.ui.manual
 
+import android.content.Context
+import android.Manifest
+import android.content.pm.PackageManager
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.outlined.PhotoCamera
+import androidx.compose.material.icons.outlined.PhotoLibrary
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import java.io.File
+import android.net.Uri
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -43,13 +63,16 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.lorran.lupanutri.LupaApp
-import com.lorran.lupanutri.data.ProductRepository
+import com.lorran.lupanutri.data.OcrReader
 import com.lorran.lupanutri.data.model.Nutrients
 import com.lorran.lupanutri.data.model.Product
+import com.lorran.lupanutri.domain.LabelField
+import com.lorran.lupanutri.domain.LabelParser
 import com.lorran.lupanutri.domain.Scorer
 import com.lorran.lupanutri.ui.components.LoadingBox
 import com.lorran.lupanutri.ui.theme.Space
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class ManualForm {
@@ -90,17 +113,73 @@ class ManualForm {
 
 fun String.num(): Double? = trim().replace(',', '.').toDoubleOrNull()?.takeIf { it >= 0 }
 
-class ManualViewModel(private val repo: ProductRepository, private val code: String) : ViewModel() {
+class ManualViewModel(private val app: LupaApp, private val code: String) : ViewModel() {
+    private val repo = app.repository
     val form = ManualForm()
     val ready = MutableStateFlow(false)
     var base: Product? = null
         private set
+    var reading by mutableStateOf(false)
+        private set
+    var ocrMessage by mutableStateOf<String?>(null)
+        private set
+    var hasOffAccount by mutableStateOf(false)
+        private set
+    var sendToOff by mutableStateOf(true)
 
     init {
         viewModelScope.launch {
-            base = repo.cached(code)
+            base = repo.cachedRaw(code)
             base?.let { form.fill(it) }
+            hasOffAccount = app.profileStore.profile.first().hasOffAccount
             ready.value = true
+        }
+    }
+
+    /** Lê a foto da embalagem e preenche o que encontrar (tabela e/ou ingredientes). */
+    fun readPhoto(context: Context, uri: Uri) {
+        reading = true
+        ocrMessage = null
+        viewModelScope.launch {
+            ocrMessage = try {
+                val lines = OcrReader.read(context, uri)
+                val label = LabelParser.parse(lines)
+                val ingredients = LabelParser.ingredients(lines)
+                val f = form
+                for ((field, v) in label.values) {
+                    val txt = Scorer.fmt(v)
+                    when (field) {
+                        LabelField.KCAL -> f.kcal = txt
+                        LabelField.CARBS -> f.carbs = txt
+                        LabelField.SUGARS -> f.sugars = txt
+                        LabelField.ADDED_SUGARS -> f.addedSugars = txt
+                        LabelField.PROTEIN -> f.protein = txt
+                        LabelField.FAT -> f.fat = txt
+                        LabelField.SAT_FAT -> f.satFat = txt
+                        LabelField.TRANS_FAT -> f.transFat = txt
+                        LabelField.FIBER -> f.fiber = txt
+                        LabelField.SODIUM -> f.sodium = txt
+                    }
+                }
+                if (label.isLiquid) f.liquid = true
+                if (ingredients != null) f.ingredients = ingredients
+                val n = label.values.size
+                when {
+                    n == 0 && ingredients == null ->
+                        "Não consegui ler a tabela nem os ingredientes. Tente de novo com o rótulo reto, de perto e com boa luz."
+                    else -> buildString {
+                        if (n > 0) append("Li $n valor${if (n > 1) "es" else ""} da tabela")
+                        if (label.convertedFromPortion) append(" (estavam por porção; converti para 100 g)")
+                        if (ingredients != null) append(if (n > 0) " e a lista de ingredientes" else "Li a lista de ingredientes")
+                        append(". ")
+                        if (label.maybePerPortion) append("Não achei a coluna de 100 g: confira se os números não estão por porção. ")
+                        append("Confira tudo com a embalagem antes de salvar.")
+                    }
+                }
+            } catch (e: Exception) {
+                "Não deu para ler a foto. Tente outra vez."
+            }
+            reading = false
         }
     }
 
@@ -135,8 +214,21 @@ class ManualViewModel(private val repo: ProductRepository, private val code: Str
             isLiquidOverride = f.liquid,
             isManual = true,
         )
+        val upload = hasOffAccount && sendToOff
         viewModelScope.launch {
             repo.save(p, viewed = true)
+            if (upload) {
+                val ctx = app.applicationContext
+                app.appScope.launch {
+                    val profile = app.profileStore.profile.first()
+                    val err = app.api.upload(p, profile.offUser, profile.offPassword)
+                    Toast.makeText(
+                        ctx,
+                        if (err == null) "Enviado ao Open Food Facts. Obrigado!" else "Não foi enviado ao Open Food Facts: $err",
+                        Toast.LENGTH_LONG,
+                    ).show()
+                }
+            }
             onDone()
         }
     }
@@ -151,10 +243,29 @@ class ManualViewModel(private val repo: ProductRepository, private val code: Str
 
 @Composable
 fun ManualScreen(app: LupaApp, code: String, onBack: () -> Unit, onSaved: () -> Unit, onDeleted: () -> Unit) {
-    val vm: ManualViewModel = viewModel(key = "manual-$code") { ManualViewModel(app.repository, code) }
+    val vm: ManualViewModel = viewModel(key = "manual-$code") { ManualViewModel(app, code) }
     val ready by vm.ready.collectAsStateWithLifecycle()
     val f = vm.form
     val isEdit = vm.base?.isManual == true
+    val context = LocalContext.current
+    var photoUri by rememberSaveable { mutableStateOf<String?>(null) }
+    val takePicture = rememberLauncherForActivityResult(ActivityResultContracts.TakePicture()) { ok ->
+        if (ok) photoUri?.let { vm.readPhoto(context, Uri.parse(it)) }
+    }
+    fun launchCamera() {
+        val dir = File(context.cacheDir, "fotos").apply { mkdirs() }
+        dir.listFiles()?.forEach { it.delete() }
+        val file = File(dir, "rotulo-${System.currentTimeMillis()}.jpg")
+        val uri = FileProvider.getUriForFile(context, "${context.packageName}.fotos", file)
+        photoUri = uri.toString()
+        runCatching { takePicture.launch(uri) }
+    }
+    val cameraPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        if (granted) launchCamera()
+    }
+    val pickImage = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+        if (uri != null) vm.readPhoto(context, uri)
+    }
 
     Scaffold(
         contentWindowInsets = WindowInsets.navigationBars,
@@ -184,10 +295,45 @@ fun ManualScreen(app: LupaApp, code: String, onBack: () -> Unit, onSaved: () -> 
             verticalArrangement = Arrangement.spacedBy(Space.sm),
         ) {
             Text(
-                "Código $code. Copie da embalagem os valores por 100 g (ou 100 ml). O cadastro fica salvo só neste aparelho.",
+                "Código $code. Use os valores por 100 g (ou 100 ml) da embalagem.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+            Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.secondaryContainer, modifier = Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(Space.md), verticalArrangement = Arrangement.spacedBy(Space.sm)) {
+                    Text("Preencher pela foto", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSecondaryContainer)
+                    Text(
+                        "Fotografe a tabela nutricional — e, se quiser, a lista de ingredientes. A leitura é feita no próprio celular.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer,
+                    )
+                    Row(horizontalArrangement = Arrangement.spacedBy(Space.sm)) {
+                        Button(
+                            enabled = !vm.reading,
+                            onClick = {
+                                val granted = ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
+                                if (granted) launchCamera() else cameraPermission.launch(Manifest.permission.CAMERA)
+                            },
+                        ) {
+                            Icon(Icons.Outlined.PhotoCamera, null)
+                            Spacer(Modifier.width(Space.sm))
+                            Text("Tirar foto")
+                        }
+                        OutlinedButton(
+                            enabled = !vm.reading,
+                            onClick = { pickImage.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) },
+                        ) {
+                            Icon(Icons.Outlined.PhotoLibrary, null)
+                            Spacer(Modifier.width(Space.sm))
+                            Text("Da galeria")
+                        }
+                    }
+                    if (vm.reading) LinearProgressIndicator(Modifier.fillMaxWidth())
+                    vm.ocrMessage?.let {
+                        Text(it, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSecondaryContainer)
+                    }
+                }
+            }
             TextIn("Nome do produto *", f.name, f.tried && f.name.isBlank(), cap = true) { f.name = it }
             TextIn("Marca", f.brand, cap = true) { f.brand = it }
             TextIn("Quantidade (ex.: 200 g, 1 L)", f.quantity) { f.quantity = it }
@@ -220,6 +366,22 @@ fun ManualScreen(app: LupaApp, code: String, onBack: () -> Unit, onSaved: () -> 
             )
             if (f.tried && !f.valid) {
                 Text("Preencha os campos com *.", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium)
+            }
+            if (vm.hasOffAccount) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(checked = vm.sendToOff, onCheckedChange = { vm.sendToOff = it })
+                    Text(
+                        "Enviar também para o Open Food Facts (a ficha fica certa para todo mundo)",
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+            } else {
+                Text(
+                    "O cadastro fica salvo neste aparelho. Para enviar também ao Open Food Facts, entre com sua conta em Perfil.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
             }
             Button(onClick = { vm.save(onSaved) }, modifier = Modifier.fillMaxWidth().padding(vertical = Space.lg)) {
                 Text("Salvar e ver a nota")

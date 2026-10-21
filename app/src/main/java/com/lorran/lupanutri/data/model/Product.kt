@@ -52,6 +52,8 @@ data class Product(
     val categories: List<String> = emptyList(),
     val isLiquidOverride: Boolean? = null,
     val isManual: Boolean = false,
+    /** Alimento da TACO usado para completar dados que faltavam (só em memória). */
+    val tacoName: String? = null,
 ) {
     val isLiquid: Boolean
         get() {

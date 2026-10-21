@@ -1,0 +1,598 @@
+id	cat	name	kcal	carbs	protein	fat	sat	fiber	sodium
+1	1	Arroz, integral, cozido	124.0	25.8	2.6	1.0	0.3	2.7	1.0
+2	1	Arroz, integral, cru	360.0	77.5	7.3	1.9	0.3	4.8	2.0
+3	1	Arroz, tipo 1, cozido	128.0	28.1	2.5	0.2	0.2	1.6	1.0
+4	1	Arroz, tipo 1, cru	358.0	78.8	7.2	0.3	0.1	1.6	1.0
+5	1	Arroz, tipo 2, cozido	130.0	28.2	2.6	0.4	0.1	1.1	2.0
+6	1	Arroz, tipo 2, cru	358.0	78.9	7.2	0.3	0.1	1.7	1.0
+7	1	Aveia, flocos, crua	394.0	66.6	13.9	8.5	1.5	9.1	5.0
+8	1	Biscoito, doce, maisena	443.0	75.2	8.1	12.0	3.9	2.1	352.0
+9	1	Biscoito, doce, recheado com chocolate	472.0	70.5	6.4	19.6	6.2	3.0	239.0
+10	1	Biscoito, doce, recheado com morango	471.0	71.0	5.7	19.6	6.1	1.5	230.0
+11	1	Biscoito, doce, wafer, recheado de chocolate	502.0	67.5	5.6	24.7	6.5	1.8	137.0
+12	1	Biscoito, doce, wafer, recheado de morango	513.0	67.4	4.5	26.4	6.7	0.8	120.0
+13	1	Biscoito, salgado, cream cracker	432.0	68.7	10.1	14.4	4.4	2.5	854.0
+14	1	Bolo, mistura para	419.0	84.7	6.2	6.1	2.1	1.7	463.0
+15	1	Bolo, pronto, aipim	324.0	47.9	4.4	12.7	5.0	0.7	111.0
+16	1	Bolo, pronto, chocolate	410.0	54.7	6.2	18.5	5.5	1.4	283.0
+17	1	Bolo, pronto, coco	333.0	52.3	5.7	11.3	4.9	1.1	190.0
+18	1	Bolo, pronto, milho	311.0	45.1	4.8	12.4	4.5	0.7	134.0
+19	1	Canjica, branca, crua	358.0	78.1	7.2	1.0	0.3	5.5	1.0
+20	1	Canjica, com leite integral	112.0	23.6	2.4	1.2	0.6	1.2	28.0
+21	1	Cereais, milho, flocos, com sal	370.0	80.8	7.3	1.6	0.5	5.3	272.0
+22	1	Cereais, milho, flocos, sem sal	363.0	80.4	6.9	1.2	0.3	1.8	31.0
+23	1	Cereais, mingau, milho, infantil	394.0	87.3	6.4	1.1	0.3	3.2	399.0
+24	1	Cereais, mistura para vitamina, trigo, cevada e aveia	381.0	81.6	8.9	2.1	0.5	5.0	1163.0
+25	1	Cereal matinal, milho	365.0	83.8	7.2	1.0	0.4	4.1	655.0
+26	1	Cereal matinal, milho, açúcar	377.0	88.8	4.7	0.7	0.2	2.1	405.0
+27	1	Creme de arroz, pó	386.0	83.9	7.0	1.2	0.4	1.1	1.0
+28	1	Creme de milho, pó	333.0	86.1	4.8	1.6	0.3	3.7	594.0
+29	1	Curau, milho verde	78.0	13.9	2.4	1.6	0.8	0.5	21.0
+30	1	Curau, milho verde, mistura para	402.0	79.8	2.2	13.4	3.0	2.5	223.0
+31	1	Farinha, de arroz, enriquecida	363.0	85.5	1.3	0.3	0.2	0.6	17.0
+32	1	Farinha, de centeio, integral	336.0	73.3	12.5	1.8	0.3	15.5	41.0
+33	1	Farinha, de milho, amarela	351.0	79.1	7.2	1.5	0.4	5.5	45.0
+34	1	Farinha, de rosca	371.0	75.8	11.4	1.5	0.6	4.8	333.0
+35	1	Farinha, de trigo	360.0	75.1	9.8	1.4	0.3	2.3	1.0
+36	1	Farinha, láctea, de cereais	415.0	77.8	11.9	5.8	3.3	1.9	125.0
+37	1	Lasanha, massa fresca, cozida	164.0	32.5	5.8	1.2	0.6	1.6	207.0
+38	1	Lasanha, massa fresca, crua	220.0	45.1	7.0	1.3	0.5	1.6	667.0
+39	1	Macarrão, instantâneo	436.0	62.4	8.8	17.2		5.6	1516.0
+40	1	Macarrão, trigo, cru	371.0	77.9	10.0	1.3		2.9	7.0
+41	1	Macarrão, trigo, cru, com ovos	371.0	76.6	10.3	2.0	0.5	2.3	15.0
+42	1	Milho, amido, cru	361.0	87.1	0.6	0.0		0.7	8.0
+43	1	Milho, fubá, cru	353.0	78.9	7.2	1.9	0.4	4.7	0.0
+44	1	Milho, verde, cru	138.0	28.6	6.6	0.6	0.2	3.9	1.0
+45	1	Milho, verde, enlatado, drenado	98.0	17.1	3.2	2.4	0.6	4.6	260.0
+46	1	Mingau tradicional, pó	373.0	89.3	0.6	0.4	0.1	0.9	15.0
+47	1	Pamonha, barra para cozimento, pré-cozida	171.0	30.7	2.6	4.8	0.5	2.4	132.0
+48	1	Pão, aveia, forma	343.0	59.6	12.4	5.7	1.1	6.0	606.0
+49	1	Pão, de soja	309.0	56.5	11.3	3.6	0.7	5.7	663.0
+50	1	Pão, glúten, forma	253.0	44.1	12.0	2.7	0.5	2.5	22.0
+51	1	Pão, milho, forma	292.0	56.4	8.3	3.1	0.6	4.3	507.0
+52	1	Pão, trigo, forma, integral	253.0	49.9	9.4	3.7	0.7	6.9	506.0
+53	1	Pão, trigo, francês	300.0	58.6	8.0	3.1	1.0	2.3	648.0
+54	1	Pão, trigo, sovado	311.0	61.5	8.4	2.8	0.8	2.4	431.0
+55	1	Pastel, de carne, cru	289.0	42.0	10.7	8.8	3.7	1.0	1309.0
+56	1	Pastel, de carne, frito	388.0	43.8	10.1	20.1	4.8	1.0	1040.0
+57	1	Pastel, de queijo, cru	308.0	45.9	9.9	9.6		1.1	985.0
+58	1	Pastel, de queijo, frito	422.0	48.1	8.7	22.7		0.9	821.0
+59	1	Pastel, massa, crua	310.0	57.4	6.9	5.5	2.1	1.4	1344.0
+60	1	Pastel, massa, frita	570.0	49.3	6.0	40.9	6.9	1.3	1175.0
+61	1	Pipoca, com óleo de soja, sem sal	448.0	70.3	9.9	15.9	2.4	14.3	4.0
+62	1	Polenta, pré-cozida	103.0	23.3	2.3	0.3		2.4	442.0
+63	1	Torrada, pão francês	377.0	74.6	10.5	3.3	0.9	3.4	829.0
+64	2	Abóbora, cabotian, cozida	48.0	10.8	1.4	0.7	0.1	2.5	1.0
+65	2	Abóbora, cabotian, crua	39.0	8.4	1.7	0.5	0.1	2.2	0.0
+66	2	Abóbora, menina brasileira, crua	14.0	3.3	0.6	0.0		1.2	0.0
+67	2	Abóbora, moranga, crua	12.0	2.7	1.0	0.1		1.7	0.0
+68	2	Abóbora, moranga, refogada	29.0	6.0	0.4	0.8	0.1	1.5	3.0
+69	2	Abóbora, pescoço, crua	24.0	6.1	0.7	0.1		2.3	1.0
+70	2	Abobrinha, italiana, cozida	15.0	3.0	1.1	0.2	0.1	1.6	1.0
+71	2	Abobrinha, italiana, crua	19.0	4.3	1.1	0.1		1.4	0.0
+72	2	Abobrinha, italiana, refogada	24.0	4.2	1.1	0.8	0.1	1.4	2.0
+73	2	Abobrinha, paulista, crua	31.0	7.9	0.6	0.1		2.6	1.0
+74	2	Acelga, crua	21.0	4.6	1.4	0.1		1.1	1.0
+75	2	Agrião, cru	17.0	2.3	2.7	0.2		2.1	7.0
+76	2	Aipo, cru	19.0	4.3	0.8	0.1		1.0	10.0
+77	2	Alface, americana, crua	9.0	1.7	0.6	0.1		1.0	7.0
+78	2	Alface, crespa, crua	11.0	1.7	1.3	0.2		1.8	3.0
+79	2	Alface, lisa, crua	14.0	2.4	1.7	0.1		2.3	4.0
+80	2	Alface, roxa, crua	13.0	2.5	0.9	0.2		2.0	7.0
+81	2	Alfavaca, crua	29.0	5.2	2.7	0.5	0.1	4.1	5.0
+82	2	Alho, cru	113.0	23.9	7.0	0.2		4.3	5.0
+83	2	Alho-poró, cru	32.0	6.9	1.4	0.1		2.5	2.0
+84	2	Almeirão, cru	18.0	3.3	1.8	0.2		2.6	2.0
+85	2	Almeirão, refogado	65.0	5.7	1.7	4.8	0.8	3.4	15.0
+86	2	Batata, baroa, cozida	80.0	18.9	0.9	0.2		1.8	2.0
+87	2	Batata, baroa, crua	101.0	24.0	1.0	0.2		2.1	0.0
+88	2	Batata, doce, cozida	77.0	18.4	0.6	0.1		2.2	3.0
+89	2	Batata, doce, crua	118.0	28.2	1.3	0.1		2.6	9.0
+90	2	Batata, frita, tipo chips, industrializada	543.0	51.2	5.6	36.6	12.9	2.5	607.0
+91	2	Batata, inglesa, cozida	52.0	11.9	1.2	0.0		1.3	2.0
+92	2	Batata, inglesa, crua	64.0	14.7	1.8	0.0		1.2	0.0
+93	2	Batata, inglesa, frita	267.0	35.6	5.0	13.1	2.1	8.1	2.0
+94	2	Batata, inglesa, sauté	68.0	14.1	1.3	0.9	0.3	1.4	8.0
+95	2	Berinjela, cozida	19.0	4.5	0.7	0.1		2.5	1.0
+96	2	Berinjela, crua	20.0	4.4	1.2	0.1		2.9	0.0
+97	2	Beterraba, cozida	32.0	7.2	1.3	0.1		1.9	23.0
+98	2	Beterraba, crua	49.0	11.1	1.9	0.1		3.4	10.0
+99	2	Biscoito, polvilho doce	438.0	80.5	1.3	12.2	2.4	1.2	98.0
+100	2	Brócolis, cozido	25.0	4.4	2.1	0.5	0.1	3.4	2.0
+101	2	Brócolis, cru	25.0	4.0	3.6	0.3	0.1	2.9	3.0
+102	2	Cará, cozido	78.0	18.9	1.5	0.1		2.6	1.0
+103	2	Cará, cru	96.0	23.0	2.3	0.1		7.3	0.0
+104	2	Caruru, cru	34.0	6.0	3.2	0.6	0.1	4.5	14.0
+105	2	Catalonha, crua	24.0	4.8	1.9	0.3	0.1	2.0	9.0
+106	2	Catalonha, refogada	63.0	4.8	2.0	4.8	0.7	3.7	25.0
+107	2	Cebola, crua	39.0	8.9	1.7	0.1		2.2	1.0
+108	2	Cebolinha, crua	20.0	3.4	1.9	0.4		3.6	2.0
+109	2	Cenoura, cozida	30.0	6.7	0.8	0.2	0.0	2.6	8.0
+110	2	Cenoura, crua	34.0	7.7	1.3	0.2		3.2	3.0
+111	2	Chicória, crua	14.0	2.9	1.1	0.1		2.2	14.0
+112	2	Chuchu, cozido	19.0	4.8	0.4	0.0		1.0	2.0
+113	2	Chuchu, cru	17.0	4.1	0.7	0.1		1.3	0.0
+114	2	Coentro, folhas desidratadas	309.0	48.0	20.9	10.4		37.3	18.0
+115	2	Couve, manteiga, crua	27.0	4.3	2.9	0.5	0.1	3.1	6.0
+116	2	Couve, manteiga, refogada 	90.0	8.7	1.7	6.6	1.0	5.7	11.0
+117	2	Couve-flor, crua	23.0	4.5	1.9	0.2		2.4	3.0
+118	2	Couve-flor, cozida	19.0	3.9	1.2	0.3	0.1	2.1	2.0
+119	2	Espinafre, Nova Zelândia, cru	16.0	2.6	2.0	0.2		2.1	17.0
+120	2	Espinafre, Nova Zelândia, refogado	67.0	4.2	2.7	5.4	0.9	2.5	47.0
+121	2	Farinha, de mandioca, crua	361.0	87.9	1.6	0.3	0.1	6.4	1.0
+122	2	Farinha, de mandioca, torrada	365.0	89.2	1.2	0.3	0.1	6.5	10.0
+123	2	Farinha, de puba	360.0	87.3	1.6	0.5	0.2	4.2	4.0
+124	2	Fécula, de mandioca	331.0	81.1	0.5	0.3		0.6	2.0
+125	2	Feijão, broto, cru	39.0	7.8	4.2	0.1		2.0	2.0
+126	2	Inhame, cru	97.0	23.2	2.1	0.2	0.1	1.7	0.0
+127	2	Jiló, cru	27.0	6.2	1.4	0.2	0.1	4.8	0.0
+128	2	Jurubeba, crua	126.0	23.1	4.4	3.9	0.5	23.9	1.0
+129	2	Mandioca, cozida	125.0	30.1	0.6	0.3	0.1	1.6	1.0
+130	2	Mandioca, crua	151.0	36.2	1.1	0.3	0.1	1.9	2.0
+131	2	Mandioca, farofa, temperada	406.0	80.3	2.1	9.1	1.9	7.8	575.0
+132	2	Mandioca, frita	300.0	50.3	1.4	11.2	1.7	1.9	9.0
+133	2	Manjericão, cru	21.0	3.6	2.0	0.4	0.1	3.3	4.0
+134	2	Maxixe, cru	14.0	2.7	1.4	0.1		2.2	11.0
+135	2	Mostarda, folha, crua	18.0	3.2	2.1	0.2		1.9	3.0
+136	2	Nhoque, batata, cozido	181.0	36.8	5.9	1.9	0.6	1.8	7.0
+137	2	Nabo, cru	18.0	4.1	1.2	0.1		2.6	2.0
+138	2	Palmito, juçara, em conserva	23.0	4.3	1.8	0.4	0.1	3.2	514.0
+139	2	Palmito, pupunha, em conserva	29.0	5.5	2.5	0.5		2.6	563.0
+140	2	Pão, de queijo, assado	363.0	34.2	5.1	24.6		0.6	773.0
+141	2	Pão, de queijo, cru	295.0	38.5	3.6	14.0	3.4	1.0	405.0
+142	2	Pepino, cru	10.0	2.0	0.9	0.0		1.1	0.0
+143	2	Pimentão, amarelo, cru	28.0	6.0	1.2	0.4		1.9	0.0
+144	2	Pimentão, verde, cru	21.0	4.9	1.1	0.2		2.6	0.0
+145	2	Pimentão, vermelho, cru	23.0	5.5	1.0	0.1		1.6	0.0
+146	2	Polvilho, doce	351.0	86.8	0.4	0.0		0.2	2.0
+147	2	Quiabo, cru	30.0	6.4	1.9	0.3		4.6	1.0
+148	2	Rabanete, cru	14.0	2.7	1.4	0.1		2.2	11.0
+149	2	Repolho, branco, cru	17.0	3.9	0.9	0.1		1.9	4.0
+150	2	Repolho, roxo, cru	31.0	7.2	1.9	0.1		2.0	2.0
+151	2	Repolho, roxo, refogado	42.0	7.6	1.8	1.2	0.2	1.8	3.0
+152	2	Rúcula, crua	13.0	2.2	1.8	0.1		1.7	9.0
+153	2	Salsa, crua	33.0	5.7	3.3	0.6	0.1	1.9	2.0
+154	2	Seleta de legumes, enlatada	57.0	12.7	3.4	0.4	0.1	3.1	398.0
+155	2	Serralha, crua	30.0	4.9	2.7	0.7	0.1	3.5	19.0
+156	2	Taioba, crua	34.0	5.4	2.9	0.9	0.2	4.5	1.0
+157	2	Tomate, com semente, cru	15.0	3.1	1.1	0.2		1.2	1.0
+158	2	Tomate, extrato	61.0	15.0	2.4	0.2		2.8	498.0
+159	2	Tomate, molho industrializado	38.0	7.7	1.4	0.9	0.1	3.1	418.0
+160	2	Tomate, purê	28.0	6.9	1.4	0.0		1.0	104.0
+161	2	Tomate, salada	21.0	5.1	0.8	0.0		2.3	5.0
+162	2	Vagem, crua	25.0	5.3	1.8	0.2		2.4	0.0
+163	3	Abacate, cru	96.0	6.0	1.2	8.4	2.3	6.3	0.0
+164	3	Abacaxi, cru	48.0	12.3	0.9	0.1		1.0	0.0
+165	3	Abacaxi, polpa, congelada	31.0	7.8	0.5	0.1		0.3	1.0
+166	3	Abiu, cru	62.0	14.9	0.8	0.7	0.3	1.7	0.0
+167	3	Açaí, polpa, com xarope de guaraná e glucose	110.0	21.5	0.7	3.7	0.7	1.7	15.0
+168	3	Açaí, polpa, congelada	58.0	6.2	0.8	3.9	0.7	2.6	5.0
+169	3	Acerola, crua	33.0	8.0	0.9	0.2		1.5	0.0
+170	3	Acerola, polpa, congelada	22.0	5.5	0.6	0.0		0.7	1.0
+171	3	Ameixa, calda, enlatada 	183.0	46.9	0.4	0.0		0.5	3.0
+172	3	Ameixa, crua	53.0	13.9	0.8	0.0		2.4	0.0
+173	3	Ameixa, em calda, enlatada, drenada 	177.0	47.7	1.0	0.3	0.1	4.5	3.0
+174	3	Atemóia, crua	97.0	25.3	1.0	0.3	0.1	2.1	1.0
+175	3	Banana, da terra, crua	128.0	33.7	1.4	0.2		1.5	0.0
+176	3	Banana, doce em barra	280.0	75.7	2.2	0.1		3.8	10.0
+177	3	Banana, figo, crua	105.0	27.8	1.1	0.1		2.8	0.0
+178	3	Banana, maçã, crua	87.0	22.3	1.8	0.1		2.6	0.0
+179	3	Banana, nanica, crua	92.0	23.8	1.4	0.1		1.9	0.0
+180	3	Banana, ouro, crua	112.0	29.3	1.5	0.2		2.0	0.0
+181	3	Banana, pacova, crua	78.0	20.3	1.2	0.1		2.0	1.0
+182	3	Banana, prata, crua	98.0	26.0	1.3	0.1		2.0	0.0
+183	3	Cacau, cru	74.0	19.4	1.0	0.1		2.2	1.0
+184	3	Cajá-Manga, cru	46.0	11.4	1.3	0.0		2.6	1.0
+185	3	Cajá, polpa, congelada	26.0	6.4	0.6	0.2		1.4	7.0
+186	3	Caju, cru	43.0	10.3	1.0	0.3		1.7	3.0
+187	3	Caju, polpa, congelada	37.0	9.4	0.5	0.2		0.8	4.0
+188	3	Caju, suco concentrado, envasado	45.0	10.7	0.4	0.2		0.6	45.0
+189	3	Caqui, chocolate, cru	71.0	19.3	0.4	0.1		6.5	2.0
+190	3	Carambola, crua	46.0	11.5	0.9	0.2		2.0	4.0
+191	3	Ciriguela, crua	76.0	18.9	1.4	0.4	0.2	3.9	2.0
+192	3	Cupuaçu, cru	49.0	10.4	1.2	1.0	0.4	3.1	3.0
+193	3	Cupuaçu, polpa, congelada	49.0	11.4	0.8	0.6	0.3	1.6	1.0
+194	3	Figo, cru	41.0	10.2	1.0	0.2		1.8	0.0
+195	3	Figo, enlatado, em calda	184.0	50.3	0.6	0.2		2.0	7.0
+196	3	Fruta-pão, crua	67.0	17.2	1.1	0.2	0.1	5.5	1.0
+197	3	Goiaba, branca, com casca, crua	52.0	12.4	0.9	0.5	0.1	6.3	0.0
+198	3	Goiaba, doce em pasta	269.0	74.1	0.6	0.0		3.7	4.0
+199	3	Goiaba, doce, cascão	286.0	78.7	0.4	0.1		4.4	11.0
+200	3	Goiaba, vermelha, com casca, crua	54.0	13.0	1.1	0.4	0.1	6.2	0.0
+201	3	Graviola, crua	62.0	15.8	0.8	0.2	0.0	1.9	4.0
+202	3	Graviola, polpa, congelada	38.0	9.8	0.6	0.1		1.2	3.0
+203	3	Jabuticaba, crua	58.0	15.3	0.6	0.1		2.3	0.0
+204	3	Jaca, crua	88.0	22.5	1.4	0.3	0.1	2.4	2.0
+205	3	Jambo, cru	27.0	6.5	0.9	0.1		5.1	22.0
+206	3	Jamelão, cru	41.0	10.6	0.5	0.1		1.8	1.0
+207	3	Kiwi, cru	51.0	11.5	1.3	0.6	0.1	2.7	0.0
+208	3	Laranja, baía, crua	45.0	11.5	1.0	0.1		1.1	0.0
+209	3	Laranja, baía, suco	37.0	8.7	0.7	0.0		0.0	0.0
+210	3	Laranja, da terra, crua	51.0	12.9	1.1	0.2		4.0	1.0
+211	3	Laranja, da terra, suco	41.0	9.6	0.7	0.1		1.0	0.0
+212	3	Laranja, lima, crua	46.0	11.5	1.1	0.1		1.8	1.0
+213	3	Laranja, lima, suco	39.0	9.2	0.7	0.1		0.4	0.0
+214	3	Laranja, pêra, crua	37.0	8.9	1.0	0.1		0.8	0.0
+215	3	Laranja, pêra, suco	33.0	7.6	0.7	0.1		0.0	0.0
+216	3	Laranja, valência, crua	46.0	11.7	0.8	0.2		1.7	1.0
+217	3	Laranja, valência, suco	36.0	8.6	0.5	0.1		0.4	0.0
+218	3	Limão, cravo, suco	14.0	5.2	0.3	0.0		0.0	0.0
+219	3	Limão, galego, suco	22.0	7.3	0.6	0.1		0.0	0.0
+220	3	Limão, tahiti, cru	32.0	11.1	0.9	0.1		1.2	1.0
+221	3	Maçã, Argentina, com casca, crua	63.0	16.6	0.2	0.2	0.1	2.0	1.0
+222	3	Maçã, Fuji, com casca, crua	56.0	15.2	0.3	0.0		1.3	0.0
+223	3	Macaúba, crua	404.0	13.9	2.1	40.7	7.1	13.4	1.0
+224	3	 Mamão, doce em calda, drenado	196.0	54.0	0.2	0.1		1.3	3.0
+225	3	Mamão, Formosa, cru	45.0	11.6	0.8	0.1		1.8	3.0
+226	3	Mamão, Papaia, cru	40.0	10.4	0.5	0.1		1.0	2.0
+227	3	 Mamão verde, doce em calda, drenado	209.0	57.6	0.3	0.1		1.2	5.0
+228	3	Manga, Haden, crua	64.0	16.7	0.4	0.3	0.1	1.6	1.0
+229	3	Manga, Palmer, crua	72.0	19.4	0.4	0.2		1.6	2.0
+230	3	Manga, polpa, congelada	48.0	12.5	0.4	0.2	0.1	1.1	7.0
+231	3	Manga, Tommy Atkins, crua	51.0	12.8	0.9	0.2	0.1	2.1	0.0
+232	3	Maracujá, cru	68.0	12.3	2.0	2.1	0.2	1.1	2.0
+233	3	Maracujá, polpa, congelada	39.0	9.6	0.8	0.2		0.5	8.0
+234	3	Maracujá, suco concentrado, envasado	42.0	9.6	0.8	0.2		0.4	22.0
+235	3	Melancia, crua	33.0	8.1	0.9	0.0		0.1	0.0
+236	3	Melão, cru	29.0	7.5	0.7	0.0		0.3	11.0
+237	3	Mexerica, Murcote, crua	58.0	14.9	0.9	0.1		3.1	1.0
+238	3	Mexerica, Rio, crua	37.0	9.3	0.7	0.1		2.7	2.0
+239	3	Morango, cru	30.0	6.8	0.9	0.3		1.7	0.0
+240	3	Nêspera, crua	43.0	11.5	0.3	0.0		3.0	0.0
+241	3	Pequi, cru	205.0	13.0	2.3	18.0		19.0	0.0
+242	3	Pêra, Park, crua	61.0	16.1	0.2	0.2	0.1	3.0	1.0
+243	3	Pêra, Williams, crua	53.0	14.0	0.6	0.1		3.0	0.0
+244	3	Pêssego, Aurora, cru	36.0	9.3	0.8	0.0		1.4	0.0
+245	3	Pêssego, enlatado, em calda	63.0	16.9	0.7	0.0		1.0	3.0
+246	3	Pinha, crua	88.0	22.4	1.5	0.3	0.1	3.4	1.0
+247	3	Pitanga, crua	41.0	10.2	0.9	0.2		3.2	2.0
+248	3	Pitanga, polpa, congelada	19.0	4.8	0.3	0.1		0.7	5.0
+249	3	Romã, crua	56.0	15.1	0.4	0.0		0.4	1.0
+250	3	Tamarindo, cru	276.0	72.5	3.2	0.5	0.1	6.4	0.0
+251	3	Tangerina, Poncã, crua	38.0	9.6	0.8	0.1		0.9	0.0
+252	3	Tangerina, Poncã, suco	36.0	8.8	0.5	0.0		0.0	0.0
+253	3	Tucumã, cru	262.0	26.5	2.1	19.1	4.7	12.7	4.0
+254	3	Umbu, cru	37.0	9.4	0.8	0.0		2.0	0.0
+255	3	Umbu, polpa, congelada	34.0	8.8	0.5	0.1		1.3	6.0
+256	3	Uva, Itália, crua	53.0	13.6	0.7	0.2		0.9	0.0
+257	3	Uva, Rubi, crua	49.0	12.7	0.6	0.2		0.9	8.0
+258	3	Uva, suco concentrado, envasado	58.0	14.7	0.0	0.0		0.2	10.0
+259	4	Azeite, de dendê	884.0			100.0	43.1		
+260	4	Azeite, de oliva, extra virgem	884.0			100.0	14.9		
+261	4	Manteiga, com sal	726.0	0.1	0.4	82.4	49.2		579.0
+262	4	Manteiga, sem sal	758.0	0.0	0.4	86.0	51.5		4.0
+263	4	Margarina, com óleo hidrogenado, com sal (65% de lipídeos)	596.0	0.0	0.0	67.4	14.9		894.0
+264	4	Margarina, com óleo hidrogenado, sem sal (80% de lipídeos)	723.0	0.0	0.0	81.7			78.0
+265	4	Margarina, com óleo interesterificado, com sal (65%de lipídeos)	594.0	0.0	0.0	67.2	21.9		561.0
+266	4	Margarina, com óleo interesterificado, sem sal (65% de lipídeos)	593.0	0.0	0.0	67.1	20.9		33.0
+267	4	Óleo, de babaçu	884.0			100.0	50.9		
+268	4	Óleo, de canola	884.0			100.0	7.9		
+269	4	Óleo, de girassol	884.0			100.0	10.8		
+270	4	Óleo, de milho	884.0			100.0	15.2		
+271	4	Óleo, de pequi	884.0			100.0	39.9		
+272	4	Óleo, de soja	884.0			100.0	15.2		
+273	5	Abadejo, filé, congelado, assado	112.0	0.0	23.5	1.2	0.6		334.0
+274	5	Abadejo, filé, congelado,cozido	91.0	0.0	19.3	0.9	0.4		189.0
+275	5	Abadejo, filé, congelado, cru	59.0	0.0	13.1	0.4	0.1		79.0
+276	5	Abadejo, filé, congelado, grelhado	130.0	0.0	27.6	1.3	0.6		305.0
+277	5	Atum, conserva em óleo	166.0	0.0	26.2	6.0	1.0		362.0
+278	5	Atum, fresco, cru	118.0	0.0	25.7	0.9	0.5		30.0
+279	5	Bacalhau, salgado, cru	136.0	0.0	29.0	1.3	0.6		13585.0
+280	5	Bacalhau, salgado, refogado	140.0	1.2	24.0	3.6	0.9		1256.0
+281	5	Cação, posta, com farinha de trigo, frita	208.0	3.1	25.0	10.0	1.5	0.5	160.0
+282	5	Cação, posta, cozida	116.0	0.0	25.6	0.7	0.2		115.0
+283	5	Cação, posta, crua	83.0	0.0	17.9	0.8	0.1		176.0
+284	5	Camarão, Rio Grande, grande, cozido	90.0	0.0	19.0	1.0	0.4		367.0
+285	5	Camarão, Rio Grande, grande, cru	47.0	0.0	10.0	0.5	0.1		201.0
+286	5	Camarão, Sete Barbas, sem cabeça, com casca, frito	231.0	2.9	18.4	15.6	2.5		99.0
+287	5	Caranguejo, cozido	83.0	0.0	18.5	0.4	0.2		360.0
+288	5	Corimba, cru	128.0	0.0	17.4	6.0	2.5		47.0
+289	5	Corimbatá, assado	261.0	0.0	19.9	19.6	4.8		40.0
+290	5	Corimbatá, cozido	239.0	0.0	20.1	16.9	4.5		37.0
+291	5	Corvina de água doce, crua	101.0	0.0	18.9	2.2	1.2		45.0
+292	5	Corvina do mar, crua	94.0	0.0	18.6	1.6	0.7		68.0
+293	5	Corvina grande, assada	147.0	0.0	26.8	3.6	1.5		85.0
+294	5	Corvina grande, cozida	100.0	0.0	23.4	2.6	0.7		68.0
+295	5	Dourada de água doce, fresca	131.0	0.0	18.8	5.6	3.0		40.0
+296	5	Lambari, congelado, cru	131.0	0.0	16.8	6.5	2.0		48.0
+297	5	Lambari, congelado, frito	327.0	0.0	28.4	22.8	5.5		65.0
+298	5	Lambari, fresco, cru	152.0	0.0	15.7	9.4	3.4		41.0
+299	5	Manjuba, com farinha de trigo, frita	344.0	10.2	23.5	22.6	5.5	0.4	37.0
+300	5	Manjuba, frita	349.0	0.0	30.1	24.5	5.3		41.0
+301	5	Merluza, filé, assado	122.0	0.0	26.6	0.9	0.2		120.0
+302	5	Merluza, filé, cru	89.0	0.0	16.6	2.0	0.9		80.0
+303	5	Merluza, filé, frito	192.0	0.0	26.9	8.5	1.4		90.0
+304	5	Pescada, branca, crua	111.0	0.0	16.3	4.6	0.8		76.0
+305	5	Pescada, branca, frita	223.0	0.0	27.4	11.8	2.3		107.0
+306	5	Pescada, filé, com farinha de trigo, frito	283.0	5.0	21.4	19.1	2.2	0.0	91.0
+307	5	Pescada, filé, cru	107.0	0.0	16.7	4.0	0.9		77.0
+308	5	Pescada, filé, frito	154.0	0.0	28.6	3.6	1.0		115.0
+309	5	Pescada, filé, molho escabeche	142.0	5.0	11.8	8.0	1.3	0.8	51.0
+310	5	Pescadinha, crua	76.0	0.0	15.5	1.1	0.3		120.0
+311	5	Pintado, assado	192.0	0.0	36.5	4.0	1.8		81.0
+312	5	Pintado, cru	91.0	0.0	18.6	1.3	0.6		43.0
+313	5	Pintado, grelhado	152.0	0.0	30.8	2.3	1.1		53.0
+314	5	Porquinho, cru	93.0	0.0	20.5	0.6	0.4		67.0
+315	5	Salmão, filé, com pele, fresco,  grelhado	229.0	0.0	23.9	14.0	3.1		85.0
+316	5	Salmão, sem pele, fresco, cru	170.0	0.0	19.3	9.7	2.5		64.0
+317	5	Salmão, sem pele, fresco, grelhado	243.0	0.0	26.1	14.5	3.6		96.0
+318	5	Sardinha, assada	164.0	0.0	32.2	3.0	1.7		74.0
+319	5	Sardinha, conserva em óleo	285.0	0.0	15.9	24.0	4.1		666.0
+320	5	Sardinha, frita	257.0	0.0	33.4	12.7	2.6		60.0
+321	5	Sardinha, inteira, crua	114.0	0.0	21.1	2.7	1.7		60.0
+322	5	Tucunaré, filé, congelado, cru	88.0	0.0	18.0	1.2	0.6		57.0
+323	6	Apresuntado	129.0	2.9	13.5	6.7	1.9		943.0
+324	6	Caldo de carne, tablete	241.0	15.1	7.8	16.6	7.8	0.6	22180.0
+325	6	Caldo de galinha, tablete	251.0	10.6	6.3	20.4	9.4	11.8	22300.0
+326	6	Carne, bovina, acém, moído, cozido	212.0	0.0	26.7	10.9	4.8		52.0
+327	6	Carne, bovina, acém, moído, cru	137.0	0.0	19.4	5.9	2.7		49.0
+328	6	Carne, bovina, acém, sem gordura, cozido	215.0	0.0	27.3	10.9	5.5		56.0
+329	6	Carne, bovina, acém, sem gordura, cru	144.0	0.0	20.8	6.1	2.8		50.0
+330	6	Carne, bovina, almôndegas, cruas	189.0	9.8	12.3	11.2	3.9		621.0
+331	6	Carne, bovina, almôndegas, fritas	272.0	14.3	18.2	15.8	4.2		1030.0
+332	6	Carne, bovina, bucho, cozido	133.0	0.0	21.6	4.5	2.4		38.0
+333	6	Carne, bovina, bucho, cru	137.0	0.0	20.5	5.5	3.3		45.0
+334	6	Carne, bovina, capa de contra-filé, com gordura, crua	217.0	0.0	19.2	15.0	6.9		58.0
+335	6	Carne, bovina, capa de contra-filé, com gordura, grelhada	312.0	0.0	30.7	20.0	8.8		81.0
+336	6	Carne, bovina, capa de contra-filé, sem gordura, crua	131.0	0.0	21.5	4.3	1.9		79.0
+337	6	Carne, bovina, capa de contra-filé, sem gordura, grelhada	239.0	0.0	35.1	10.0	4.3		83.0
+338	6	Carne, bovina, charque, cozido	263.0	0.0	36.4	11.9	4.8		1443.0
+339	6	Carne, bovina, charque, cru	249.0	0.0	22.7	16.8	8.7		5875.0
+340	6	Carne, bovina, contra-filé, à milanesa	352.0	12.2	20.6	24.0	7.2	0.4	77.0
+341	6	Carne, bovina, contra-filé de costela, cru	202.0	0.0	19.8	13.1	6.7		39.0
+342	6	Carne, bovina, contra-filé de costela, grelhado	275.0	0.0	29.9	16.3	8.8		51.0
+343	6	Carne, bovina, contra-filé, com gordura, cru	206.0	0.0	21.2	12.8	5.6		44.0
+344	6	Carne, bovina, contra-filé, com gordura, grelhado	278.0	0.0	32.4	15.5	7.4		57.0
+345	6	Carne, bovina, contra-filé, sem gordura, cru	157.0	0.0	24.0	6.0	2.7		53.0
+346	6	Carne, bovina, contra-filé, sem gordura, grelhado	194.0	0.0	35.9	4.5	2.0		58.0
+347	6	Carne, bovina, costela, assada	373.0	0.0	28.8	27.7	11.8		92.0
+348	6	Carne, bovina, costela, crua	358.0	0.0	16.7	31.8	14.9		70.0
+349	6	Carne, bovina, coxão duro, sem gordura, cozido	217.0	0.0	31.9	8.9	3.5		41.0
+350	6	Carne, bovina, coxão duro, sem gordura, cru	148.0	0.0	21.5	6.2	2.9		49.0
+351	6	Carne, bovina, coxão mole, sem gordura, cozido	219.0	0.0	32.4	8.9	4.3		44.0
+352	6	Carne, bovina, coxão mole, sem gordura, cru	169.0	0.0	21.2	8.7	3.9		61.0
+353	6	Carne, bovina, cupim, assado	330.0	0.0	28.6	23.0	5.5		72.0
+354	6	Carne, bovina, cupim, cru	221.0	0.0	19.5	15.3	6.8		47.0
+355	6	Carne, bovina, fígado, cru	141.0	1.1	20.7	5.4	2.8		76.0
+356	6	Carne, bovina, fígado, grelhado	225.0	4.2	29.9	9.0	4.7		82.0
+357	6	Carne, bovina, filé mingnon, sem gordura, cru	143.0	0.0	21.6	5.6	2.9		49.0
+358	6	Carne, bovina, filé mingnon, sem gordura, grelhado	220.0	0.0	32.8	8.8	4.5		58.0
+359	6	Carne, bovina, flanco, sem gordura, cozido	196.0	0.0	29.4	7.8	3.9		42.0
+360	6	Carne, bovina, flanco, sem gordura, cru	141.0	0.0	20.0	6.2	3.1		54.0
+361	6	Carne, bovina, fraldinha, com gordura, cozida	338.0	0.0	24.2	26.0	12.1		39.0
+362	6	Carne, bovina, fraldinha, com gordura, crua	221.0	0.0	17.6	16.1	7.3		51.0
+363	6	Carne, bovina, lagarto, cozido	222.0	0.0	32.9	9.1	3.9		48.0
+364	6	Carne, bovina, lagarto, cru	135.0	0.0	20.5	5.2	2.3		54.0
+365	6	Carne, bovina, língua, cozida	315.0	0.0	21.4	24.8	11.2		59.0
+366	6	Carne, bovina, língua, crua	215.0	0.0	17.1	15.8	6.8		73.0
+367	6	Carne, bovina, maminha, crua	153.0	0.0	20.9	7.0	3.1		37.0
+368	6	Carne, bovina, maminha, grelhada	153.0	0.0	30.7	2.4	9.7		58.0
+369	6	Carne, bovina, miolo de alcatra, sem gordura, cru	163.0	0.0	21.6	7.8	3.4		43.0
+370	6	Carne, bovina, miolo de alcatra, sem gordura, grelhado	241.0	0.0	31.9	11.6	5.1		52.0
+371	6	Carne, bovina, músculo, sem gordura, cozido	194.0	0.0	31.2	6.7	2.9		62.0
+372	6	Carne, bovina, músculo, sem gordura, cru	142.0	0.0	21.6	5.5	2.2		66.0
+373	6	Carne, bovina, paleta, com gordura, crua	159.0	0.0	21.4	7.5	3.5		65.0
+374	6	Carne, bovina, paleta, sem gordura, cozida	194.0	0.0	29.7	7.4	3.4		58.0
+375	6	Carne, bovina, paleta, sem gordura, crua	141.0	0.0	21.0	5.7	2.7		66.0
+376	6	Carne, bovina, patinho, sem gordura, cru	133.0	0.0	21.7	4.5	2.0		49.0
+377	6	Carne, bovina, patinho, sem gordura, grelhado	219.0	0.0	35.9	7.3	3.1		60.0
+378	6	Carne, bovina, peito, sem gordura, cozido	338.0	0.0	22.2	27.0	11.7		56.0
+379	6	Carne, bovina, peito, sem gordura, cru	259.0	0.0	17.6	20.4	8.2		64.0
+380	6	Carne, bovina, picanha, com gordura, crua	213.0	0.0	18.8	14.7	6.1		38.0
+381	6	Carne, bovina, picanha, com gordura, grelhada	289.0	0.0	26.4	19.5	7.9		60.0
+382	6	Carne, bovina, picanha, sem gordura, crua	134.0	0.0	21.3	4.7	2.0		61.0
+383	6	Carne, bovina, picanha, sem gordura, grelhada	238.0	0.0	31.9	11.3	4.5		61.0
+384	6	Carne, bovina, seca, cozida	313.0	0.0	26.9	21.9	10.5		1943.0
+385	6	Carne, bovina, seca, crua	313.0	0.0	19.7	25.4	8.7		4440.0
+386	6	Coxinha de frango, frita	283.0	34.5	9.6	11.8	2.6	5.0	532.0
+387	6	Croquete, de carne, cru	246.0	13.9	12.0	15.6			711.0
+388	6	Croquete, de carne, frito	347.0	18.1	16.9	22.7	5.1		916.0
+389	6	Empada de frango, pré-cozida, assada	358.0	47.5	6.9	15.6		2.2	525.0
+390	6	Empada, de frango, pré-cozida	377.0	35.5	7.3	22.9	5.4	2.2	771.0
+391	6	Frango, asa, com pele, crua	213.0	0.0	18.1	15.1	4.4		96.0
+392	6	Frango, caipira, inteiro, com pele, cozido	243.0	0.0	23.9	15.6	4.4		56.0
+393	6	Frango, caipira, inteiro, sem pele, cozido	196.0	0.0	29.6	7.7	2.2		53.0
+394	6	Frango, coração, cru	222.0	0.0	12.6	18.6	4.9		95.0
+395	6	Frango, coração, grelhado	207.0	0.6	22.4	12.1	3.5		128.0
+396	6	Frango, coxa, com pele, assada	215.0	0.1	28.5	10.4	3.1		95.0
+397	6	Frango, coxa, com pele, crua	161.0	0.0	17.1	9.8	3.0		95.0
+398	6	Frango, coxa, sem pele, cozida	167.0	0.0	26.9	5.8	2.0		64.0
+399	6	Frango, coxa, sem pele, crua	120.0	0.0	17.8	4.9	1.6		98.0
+400	6	Frango, fígado, cru	106.0	0.0	17.6	3.5	1.3		82.0
+401	6	Frango, filé, à milanesa	221.0	7.5	28.5	7.8	1.6	1.1	122.0
+402	6	Frango, inteiro, com pele, cru	226.0	0.0	16.4	17.3	5.2		63.0
+403	6	Frango, inteiro, sem pele, assado	187.0	0.0	28.0	7.5	2.1		70.0
+404	6	Frango, inteiro, sem pele, cozido	170.0	0.0	25.0	7.1	2.2		51.0
+405	6	Frango, inteiro, sem pele, cru	129.0	0.0	20.6	4.6	1.4		73.0
+406	6	Frango, peito, com pele, assado	212.0	0.0	33.4	7.6	2.2		56.0
+407	6	Frango, peito, com pele, cru	149.0	0.0	20.8	6.7	2.2		62.0
+408	6	Frango, peito, sem pele, cozido	163.0	0.0	31.5	3.2	1.1		36.0
+409	6	Frango, peito, sem pele, cru	119.0	0.0	21.5	3.0	1.1		56.0
+410	6	Frango, peito, sem pele, grelhado	159.0	0.0	32.0	2.5	0.9		50.0
+411	6	Frango, sobrecoxa, com pele, assada	260.0	0.0	28.7	15.2	4.2		96.0
+412	6	Frango, sobrecoxa, com pele, crua	255.0	0.0	15.5	20.9	6.5		68.0
+413	6	Frango, sobrecoxa, sem pele, assada	233.0	0.0	29.2	12.0	3.3		106.0
+414	6	Frango, sobrecoxa, sem pele, crua	162.0	0.0	17.6	9.6	3.0		80.0
+415	6	Hambúrguer, bovino, cru	215.0	4.2	13.2	16.2	5.7		869.0
+416	6	Hambúrguer, bovino, frito	258.0	6.3	20.0	17.0	5.9		1252.0
+417	6	Hambúrguer, bovino, grelhado	210.0	11.3	13.2	12.4	5.1		1090.0
+418	6	Lingüiça, frango, crua	218.0	0.0	14.2	17.4	5.2		1126.0
+419	6	Lingüiça, frango, frita	245.0	0.0	18.3	18.5	5.0		1374.0
+420	6	Lingüiça, frango, grelhada	244.0	0.0	18.2	18.4	4.7		1351.0
+421	6	Lingüiça, porco, crua	227.0	0.0	16.1	17.6	4.0		1176.0
+422	6	Lingüiça, porco, frita	280.0	0.0	20.5	21.3	6.5		1432.0
+423	6	Lingüiça, porco, grelhada	296.0	0.0	23.2	21.9	7.0		1456.0
+424	6	Mortadela	269.0	5.8	12.0	21.6	6.1		1212.0
+425	6	Peru, congelado, assado	163.0	0.0	26.2	5.7	1.6		628.0
+426	6	Peru, congelado, cru	94.0	0.0	18.1	1.8	0.4		711.0
+427	6	Porco, bisteca, crua	164.0	0.0	21.5	8.0	3.5		54.0
+428	6	Porco, bisteca, frita	311.0	0.0	33.7	18.5	6.0		63.0
+429	6	Porco, bisteca, grelhada	280.0	0.0	28.9	17.4	7.5		51.0
+430	6	Porco, costela, assada	402.0	0.0	30.2	30.3	11.8		63.0
+431	6	Porco, costela, crua	256.0	0.0	18.0	19.8	7.4		88.0
+432	6	Porco, lombo, assado	210.0	0.0	35.7	6.4	2.6		39.0
+433	6	Porco, lombo, cru	176.0	0.0	22.6	8.8	3.3		53.0
+434	6	Porco, orelha, salgada, crua	258.0	0.0	18.5	19.9	7.3		616.0
+435	6	Porco, pernil, assado	262.0	0.0	32.1	13.9	4.8		62.0
+436	6	Porco, pernil, cru	186.0	0.0	20.1	11.1	4.2		102.0
+437	6	Porco, rabo, salgado, cru	377.0	0.0	15.6	34.5	11.6		1158.0
+438	6	Presunto, com capa de gordura	128.0	1.4	14.4	6.8	1.9		1021.0
+439	6	Presunto, sem capa de gordura	94.0	2.1	14.3	2.7	0.9		1039.0
+440	6	Quibe, assado	136.0	12.9	14.6	2.7	1.2	1.9	40.0
+441	6	Quibe, cru	109.0	10.8	12.4	1.7	0.7	1.6	39.0
+442	6	Quibe, frito	254.0	12.3	14.9	15.8	4.6		836.0
+443	6	Salame	398.0	2.9	25.8	30.6	9.6		1574.0
+444	6	Toucinho, cru	593.0	0.0	11.5	60.3	17.7		50.0
+445	6	Toucinho, frito	697.0	0.0	27.3	64.3	20.0		125.0
+446	7	Bebida láctea, pêssego	55.0	7.6	2.1	1.9	1.1	0.3	46.0
+447	7	Creme de Leite	221.0	4.5	1.5	22.5	11.8		52.0
+448	7	Iogurte, natural	51.0	1.9	4.1	3.0	1.8		52.0
+449	7	Iogurte, natural, desnatado	41.0	5.8	3.8	0.3	0.2		60.0
+450	7	Iogurte, sabor abacaxi							
+451	7	Iogurte, sabor morango	70.0	9.7	2.7	2.3	1.4	0.2	38.0
+452	7	Iogurte, sabor pêssego	68.0	9.4	2.5	2.3	1.4	0.7	37.0
+453	7	Leite, condensado	313.0	57.0	7.7	6.7	4.2		94.0
+454	7	Leite, de cabra	66.0	5.2	3.1	3.8	2.4		74.0
+455	7	Leite, de vaca, achocolatado	83.0	14.2	2.1	2.2	1.1	0.6	72.0
+456	7	Leite, de vaca, desnatado, pó	362.0	53.0	34.7	0.9	0.6		432.0
+457	7	Leite, de vaca, desnatado, UHT							51.0
+458	7	Leite, de vaca, integral					1.4		64.0
+459	7	Leite, de vaca, integral, pó	497.0	39.2	25.4	26.9	16.3		323.0
+460	7	Leite, fermentado	70.0	15.7	1.9	0.1			33.0
+461	7	Queijo, minas, frescal	264.0	3.2	17.4	20.2	11.4		31.0
+462	7	Queijo, minas, meia cura	321.0	3.6	21.2	24.6	13.2		501.0
+463	7	Queijo, mozarela	330.0	3.0	22.6	25.2	14.2		581.0
+464	7	Queijo, parmesão	453.0	1.7	35.6	33.5	19.7		1844.0
+465	7	Queijo, pasteurizado	303.0	5.7	9.4	27.4	15.9		780.0
+466	7	Queijo, petit suisse, morango	121.0	18.5	5.8	2.8	1.6		412.0
+467	7	Queijo, prato	360.0	1.9	22.7	29.1	16.3		580.0
+468	7	Queijo, requeijão, cremoso	257.0	2.4	9.6	23.4	13.7		558.0
+469	7	Queijo, ricota	140.0	3.8	12.6	8.1	4.5		283.0
+470	8	Bebida isotônica, sabores variados	26.0	6.4	0.0	0.0			44.0
+471	8	Café, infusão 10%	9.0	1.5	0.7	0.1			1.0
+472	8	Cana, aguardente 1	216.0						3.0
+473	8	Cana, caldo de	65.0	18.2	0.0	0.0		0.1	0.0
+474	8	Cerveja, pilsen 2	41.0	3.3	0.6	0.0			4.0
+475	8	Chá, erva-doce, infusão 5%	1.0	0.4	0.0	0.0			1.0
+476	8	Chá, mate, infusão 5%	3.0	0.6	0.0	0.1			0.0
+477	8	Chá, preto, infusão 5%	2.0	0.6	0.0	0.0			0.0
+478	8	Coco, água de	22.0	5.3	0.0	0.0		0.1	2.0
+479	8	Refrigerante, tipo água tônica	31.0	8.0	0.0	0.0			8.0
+480	8	Refrigerante, tipo cola	34.0	8.7	0.0	0.0			7.0
+481	8	Refrigerante, tipo guaraná	39.0	10.0	0.0	0.0			9.0
+482	8	Refrigerante, tipo laranja	46.0	11.8	0.0	0.0			9.0
+483	8	Refrigerante, tipo limão	40.0	10.3	0.0	0.0			9.0
+484	9	Omelete, de queijo	268.0	0.4	15.6	22.0	6.4		216.0
+485	9	Ovo, de codorna, inteiro, cru	177.0	0.8	13.7	12.7	8.9		129.0
+486	9	Ovo, de galinha, clara, cozida/10minutos	59.0	0.0	13.4	0.1			181.0
+487	9	Ovo, de galinha, gema, cozida/10minutos	353.0	1.6	15.9	30.8	9.2		45.0
+488	9	Ovo, de galinha, inteiro, cozido/10minutos	146.0	0.6	13.3	9.5	2.9		146.0
+489	9	Ovo, de galinha, inteiro, cru	143.0	1.6	13.0	8.9	2.6		168.0
+490	9	Ovo, de galinha, inteiro, frito	240.0	1.2	15.6	18.6	4.1		166.0
+491	10	Achocolatado, pó	401.0	91.2	4.2	2.2	1.1	3.9	65.0
+492	10	Açúcar, cristal	387.0	99.6	0.3	0.0			0.0
+493	10	Açúcar, mascavo	369.0	94.5	0.8	0.1			25.0
+494	10	Açúcar, refinado	387.0	99.5	0.3	0.0			12.0
+495	10	Chocolate, ao leite	540.0	59.6	7.2	30.3	17.5	2.2	77.0
+496	10	Chocolate, ao leite, com castanha do Pará	559.0	55.4	7.4	34.2	14.1	2.5	64.0
+497	10	Chocolate, ao leite, dietético	557.0	56.3	6.9	33.8	19.2	2.8	85.0
+498	10	Chocolate, meio amargo	475.0	62.4	4.9	29.9	13.1	4.9	9.0
+499	10	Cocada branca	449.0	81.4	1.1	13.6	8.4	3.6	29.0
+500	10	Doce, de abóbora, cremoso	199.0	54.6	0.9	0.2	0.0	2.3	0.0
+501	10	Doce, de leite, cremoso	306.0	59.5	5.5	6.0	1.3		120.0
+502	10	Geléia, mocotó, natural	106.0	24.2	2.1	0.1	0.0		43.0
+503	10	Glicose de milho	292.0	79.4	0.0	0.0			59.0
+504	10	Maria mole	301.0	73.6	3.8	0.2		0.7	15.0
+505	10	Maria mole, coco queimado	307.0	75.1	3.9	0.1		0.6	14.0
+506	10	Marmelada	257.0	70.8	0.4	0.1		4.1	11.0
+507	10	Mel, de abelha	309.0	84.0	0.0	0.0			6.0
+508	10	Melado	297.0	76.6	0.0	0.0			4.0
+509	10	Quindim	411.0	46.3	4.7	24.4	11.3	3.2	27.0
+510	10	Rapadura	352.0	90.8	1.0	0.1			22.0
+511	11	Café, pó, torrado	419.0	65.8	14.7	11.9	5.3	51.2	1.0
+512	11	Capuccino, pó	417.0	73.6	11.3	8.6	4.0	2.4	382.0
+513	11	Fermento em pó, químico	90.0	43.9	0.5	0.1			10052.0
+514	11	Fermento, biológico, levedura, tablete	90.0	7.7	17.0	1.5		4.2	40.0
+515	11	Gelatina, sabores variados, pó	380.0	89.2	8.9	0.0			235.0
+516	11	Sal, dietético							23432.0
+517	11	Sal, grosso							39943.0
+518	11	Shoyu	61.0	11.6	3.3	0.3	0.0		5024.0
+519	11	Tempero a base de sal	21.0	2.1	2.7	0.3		0.6	32560.0
+520	12	Azeitona, preta, conserva	194.0	5.5	1.2	20.3	3.5	4.6	1567.0
+521	12	Azeitona, verde, conserva	137.0	4.1	0.9	14.2	2.3	3.8	1347.0
+522	12	Chantilly, spray, com gordura vegetal	315.0	16.9	0.5	27.3	25.9		110.0
+523	12	Leite, de coco	166.0	2.2	1.0	18.4	15.6	0.7	44.0
+524	12	Maionese, tradicional com ovos	302.0	7.9	0.6	30.5	4.1		787.0
+525	13	Acarajé	289.0	19.1	8.3	19.9	9.1	9.4	305.0
+526	13	Arroz carreteiro	154.0	11.6	10.8	7.1	3.2	1.5	1622.0
+527	13	Baião de dois, arroz e feijão-de-corda	136.0	20.4	6.2	3.2	0.6	5.1	93.0
+528	13	Barreado	165.0	0.2	18.3	9.5	3.3	0.1	48.0
+529	13	Bife à cavalo, com contra filé	291.0	0.0	23.7	21.1	7.9		83.0
+530	13	Bolinho de arroz	274.0	41.7	8.0	8.3	1.8	2.7	59.0
+531	13	Camarão à baiana	101.0	3.2	7.9	6.0	1.6	0.4	85.0
+532	13	Charuto, de repolho	78.0	10.1	6.8	1.1	0.5	1.5	12.0
+533	13	Cuscuz, de milho, cozido com sal	113.0	25.3	2.2	0.7	0.2	2.1	248.0
+534	13	Cuscuz, paulista	142.0	22.5	2.6	4.6	1.8	2.4	236.0
+535	13	Cuxá, molho	80.0	5.7	5.6	3.6	0.6	3.0	1344.0
+536	13	Dobradinha	125.0	0.0	19.8	4.4	2.5		29.0
+537	13	Estrogonofe de carne	173.0	3.0	15.0	10.8	5.3		123.0
+538	13	Estrogonofe de frango	157.0	2.6	17.6	8.0	3.7		99.0
+539	13	Feijão tropeiro mineiro	152.0	19.6	10.2	6.8	2.2	3.6	365.0
+540	13	Feijoada	117.0	11.6	8.7	6.5	1.9	5.1	278.0
+541	13	Frango, com açafrão	113.0	4.1	9.7	6.2	1.6	0.2	29.0
+542	13	Macarrão, molho bolognesa	120.0	22.5	4.9	0.9	0.3	0.8	9.0
+543	13	Maniçoba	134.0	3.4	10.0	8.7	2.9	2.2	407.0
+544	13	Quibebe	86.0	6.6	8.6	2.7	1.0	1.7	247.0
+545	13	Salada, de legumes, com maionese	96.0	8.9	1.1	7.0	1.1	2.2	228.0
+546	13	Salada, de legumes, cozida no vapor	35.0	7.1	2.0	0.3	0.1	2.5	3.0
+547	13	Salpicão, de frango	148.0	4.6	13.9	7.8	1.3	0.4	248.0
+548	13	Sarapatel	123.0	1.1	18.5	4.4	1.4		216.0
+549	13	Tabule	57.0	10.6	2.0	1.2	0.2	2.1	1.0
+550	13	Tacacá	47.0	3.4	7.0	0.4	0.2	0.2	1349.0
+551	13	Tapioca, com manteiga	348.0	63.6	0.1	10.9	6.0	0.0	158.0
+552	13	Tucupi, com pimenta-de-cheiro	27.0	4.7	2.1	0.3	0.1	0.2	5.0
+553	13	Vaca atolada	145.0	10.1	5.1	9.3	4.1	2.3	26.0
+554	13	Vatapá	255.0	9.7	6.0	23.2	7.5	1.7	880.0
+555	13	Virado à paulista	307.0	14.1	10.2	25.6	8.3	2.2	346.0
+556	13	Yakisoba	113.0	18.3	7.5	2.6	0.6	1.1	794.0
+557	14	Amendoim, grão, cru	544.0	20.3	27.2	43.9	8.7	8.0	0.0
+558	14	Amendoim, torrado, salgado	606.0	18.7	22.5	54.0	9.7	7.8	376.0
+559	14	Ervilha, em vagem	88.0	14.2	7.5	0.5	0.0	9.7	0.0
+560	14	Ervilha, enlatada, drenada	74.0	13.4	4.6	0.4	0.1	5.1	372.0
+561	14	Feijão, carioca, cozido	76.0	13.6	4.8	0.5	0.1	8.5	2.0
+562	14	Feijão, carioca, cru	329.0	61.2	20.0	1.3	0.2	18.4	0.0
+563	14	Feijão, fradinho, cozido	78.0	13.5	5.1	0.6	0.2	7.5	1.0
+564	14	Feijão, fradinho, cru	339.0	61.2	20.2	2.4	0.7	23.6	10.0
+565	14	Feijão, jalo, cozido	93.0	16.5	6.1	0.5	0.1	13.9	1.0
+566	14	Feijão, jalo, cru	328.0	61.5	20.1	0.9	0.3	30.3	25.0
+567	14	Feijão, preto, cozido	77.0	14.0	4.5	0.5	0.1	8.4	2.0
+568	14	Feijão, preto, cru	324.0	58.8	21.3	1.2	0.2	21.8	0.0
+569	14	Feijão, rajado, cozido	85.0	15.3	5.5	0.4	0.1	9.3	1.0
+570	14	Feijão, rajado, cru	326.0	62.9	17.3	1.2	0.4	24.0	14.0
+571	14	Feijão, rosinha, cozido	68.0	11.8	4.5	0.5	0.2	4.8	2.0
+572	14	Feijão, rosinha, cru	337.0	62.2	20.9	1.3	0.6	20.6	24.0
+573	14	Feijão, roxo, cozido	77.0	12.9	5.7	0.5	0.1	11.5	1.0
+574	14	Feijão, roxo, cru	331.0	60.0	22.2	1.2	0.3	33.8	10.0
+575	14	Grão-de-bico, cru	355.0	57.9	21.2	5.4	0.9	12.4	5.0
+576	14	Guandu, cru	344.0	64.0	19.0	2.1	0.6	21.3	2.0
+577	14	Lentilha, cozida	93.0	16.3	6.3	0.5	0.1	7.9	1.0
+578	14	Lentilha, crua	339.0	62.0	23.2	0.8	0.1	16.9	0.0
+579	14	Paçoca, amendoim	487.0	52.4	16.0	26.1	4.1	7.3	167.0
+580	14	Pé-de-moleque, amendoim	503.0	54.7	13.2	28.0	5.1	3.4	16.0
+581	14	Soja, farinha	404.0	38.4	36.0	14.6		20.2	6.0
+582	14	Soja, extrato solúvel, natural, fluido	39.0	4.3	2.4	1.6	0.2	0.4	57.0
+583	14	Soja, extrato solúvel, pó	459.0	28.5	35.7	26.2	3.3	7.3	83.0
+584	14	Soja, queijo (tofu)	64.0	2.1	6.6	4.0	0.4	0.8	1.0
+585	14	Tremoço, cru	381.0	43.8	33.6	10.3	1.2	32.3	3.0
+586	14	Tremoço, em conserva	121.0	12.4	11.1	3.8	0.4	14.4	1809.0
+587	15	Amêndoa, torrada, salgada	581.0	29.5	18.6	47.3	4.8	11.6	279.0
+588	15	Castanha-de-caju, torrada, salgada	570.0	29.1	18.5	46.3	7.7	3.7	125.0
+589	15	Castanha-do-Brasil, crua	643.0	15.1	14.5	63.5	15.3	7.9	1.0
+590	15	Coco, cru	406.0	10.4	3.7	42.0	30.0	5.4	15.0
+591	15	Coco,  verde, cru					3.1		
+592	15	Farinha, de mesocarpo de babaçu, crua	329.0	79.2	1.4	0.2		17.9	12.0
+593	15	Gergelim, semente	584.0	21.6	21.2	50.4	7.8	11.9	3.0
+594	15	Linhaça, semente	495.0	43.3	14.1	32.3	4.2	33.5	9.0
+595	15	Pinhão, cozido	174.0	43.9	3.0	0.7	0.3	15.6	1.0
+596	15	Pupunha, cozida	219.0	29.6	2.5	12.8	3.1	4.3	1.0
+597	15	Noz, crua	620.0	18.4	14.0	59.4	5.6	7.2	5.0

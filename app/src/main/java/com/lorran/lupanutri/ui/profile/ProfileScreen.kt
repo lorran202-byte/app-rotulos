@@ -3,6 +3,15 @@
 package com.lorran.lupanutri.ui.profile
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -54,6 +63,7 @@ class ProfileViewModel(private val store: ProfileStore) : ViewModel() {
     val profile: StateFlow<Profile> = store.profile.stateIn(viewModelScope, SharingStarted.Eagerly, Profile())
     fun setGoal(g: Goal) = viewModelScope.launch { store.setGoal(g) }
     fun toggle(r: Restriction) = viewModelScope.launch { store.toggle(r) }
+    fun setOff(user: String, pass: String) = viewModelScope.launch { store.setOffAccount(user, pass) }
 }
 
 @Composable
@@ -130,6 +140,9 @@ fun ProfileScreen(app: LupaApp) {
             }
 
             Spacer(Modifier.height(Space.xl))
+            OffAccount(profile, onSave = { u, p -> vm.setOff(u, p) })
+
+            Spacer(Modifier.height(Space.xl))
             Text("Sobre a nota", style = MaterialTheme.typography.titleMedium)
             Spacer(Modifier.height(Space.sm))
             Text(
@@ -149,3 +162,37 @@ fun ProfileScreen(app: LupaApp) {
     }
 }
 
+
+@Composable
+private fun OffAccount(profile: Profile, onSave: (String, String) -> Unit) {
+    var user by remember(profile.offUser) { mutableStateOf(profile.offUser) }
+    var pass by remember(profile.offPassword) { mutableStateOf(profile.offPassword) }
+    val changed = user != profile.offUser || pass != profile.offPassword
+    Text("Conta do Open Food Facts (opcional)", style = MaterialTheme.typography.titleMedium)
+    Text(
+        "Com ela, os produtos que você cadastrar ou corrigir vão também para a base aberta e ficam certos para todo mundo. " +
+            "Crie grátis em world.openfoodfacts.org. A senha fica guardada só neste celular.",
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+    )
+    Spacer(Modifier.height(Space.sm))
+    OutlinedTextField(
+        value = user, onValueChange = { user = it.trim() }, label = { Text("Usuário") },
+        singleLine = true, modifier = Modifier.fillMaxWidth(),
+    )
+    Spacer(Modifier.height(Space.sm))
+    OutlinedTextField(
+        value = pass, onValueChange = { pass = it }, label = { Text("Senha") },
+        singleLine = true, modifier = Modifier.fillMaxWidth(),
+        visualTransformation = PasswordVisualTransformation(),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+    )
+    Spacer(Modifier.height(Space.sm))
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Button(onClick = { onSave(user, pass) }, enabled = changed) { Text("Salvar conta") }
+        Spacer(Modifier.width(Space.md))
+        if (!changed && profile.hasOffAccount) {
+            Text("Conta salva", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+        }
+    }
+}

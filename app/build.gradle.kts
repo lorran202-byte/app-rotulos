@@ -15,8 +15,8 @@ android {
         applicationId = "com.lorran.lupanutri"
         minSdk = 26
         targetSdk = 35
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "1.3"
         // Celulares Android atuais (ARM); deixa o APK bem menor.
         ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a") }
     }
@@ -85,6 +85,7 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:$camerax")
     implementation("androidx.camera:camera-view:$camerax")
     implementation("com.google.mlkit:barcode-scanning:17.3.0")
+    implementation("com.google.mlkit:text-recognition:16.0.1")
 
     implementation("io.coil-kt:coil-compose:2.7.0")
 

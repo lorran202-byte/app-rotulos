@@ -38,6 +38,60 @@ class OffApi {
         parseList(url)
     }
 
+    /**
+     * Envia os dados da embalagem para o Open Food Facts com a conta do usuário.
+     * Retorna null se deu certo, ou a mensagem de erro.
+     */
+    suspend fun upload(p: Product, user: String, password: String): String? = withContext(Dispatchers.IO) {
+        val f = linkedMapOf(
+            "code" to p.code, "user_id" to user, "password" to password, "lc" to "pt",
+            "product_name_pt" to p.name,
+        )
+        p.brand?.let { f["brands"] = it }
+        p.quantity?.let { f["quantity"] = it }
+        p.ingredientsText?.let { f["ingredients_text_pt"] = it }
+        val n = p.nutrients
+        f["nutrition_data_per"] = "100g"
+        fun put(key: String, v: Double?, unit: String) {
+            if (v != null) { f["nutriment_$key"] = v.toString(); f["nutriment_${key}_unit"] = unit }
+        }
+        put("energy-kcal", n.kcal, "kcal")
+        put("carbohydrates", n.carbs, "g")
+        put("sugars", n.sugars, "g")
+        put("added-sugars", n.addedSugars, "g")
+        put("proteins", n.protein, "g")
+        put("fat", n.fat, "g")
+        put("saturated-fat", n.satFat, "g")
+        put("trans-fat", n.transFat, "g")
+        put("fiber", n.fiber, "g")
+        put("sodium", n.sodiumMg, "mg")
+        val body = f.entries.joinToString("&") { "${enc(it.key)}=${enc(it.value)}" }
+        try {
+            val conn = URL("https://world.openfoodfacts.org/cgi/product_jqm2.pl").openConnection() as HttpURLConnection
+            try {
+                conn.requestMethod = "POST"
+                conn.doOutput = true
+                conn.connectTimeout = 15_000
+                conn.readTimeout = 30_000
+                conn.setRequestProperty("User-Agent", "LupaNutri/1.3 (Android)")
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
+                conn.outputStream.use { it.write(body.toByteArray(Charsets.UTF_8)) }
+                val status = conn.responseCode
+                val text = (if (status in 200..299) conn.inputStream else conn.errorStream)
+                    ?.bufferedReader()?.use { it.readText() }.orEmpty()
+                if (status == 401 || status == 403) return@withContext "usuário ou senha do Open Food Facts incorretos"
+                if (status !in 200..299) return@withContext "o servidor respondeu com erro ($status)"
+                val json = runCatching { JSONObject(text) }.getOrNull()
+                if (json != null && json.optInt("status", 0) == 1) null
+                else json?.optString("status_verbose")?.takeIf { it.isNotBlank() } ?: "resposta inesperada do servidor"
+            } finally {
+                conn.disconnect()
+            }
+        } catch (e: IOException) {
+            "sem conexão"
+        }
+    }
+
     private fun parseList(url: String): List<Product> {
         val (status, body) = get(url)
         if (status !in 200..299) throw IOException("HTTP $status")

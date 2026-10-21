@@ -197,7 +197,20 @@ private fun ProductContent(
         verticalArrangement = Arrangement.spacedBy(Space.md),
     ) {
         item { Header(product, fromCache) }
-        item { ScoreCard(result, goal, onComplete = onComplete, canComplete = !product.nutrients.isUsable) }
+        item { ScoreCard(result, goal, onComplete = onComplete, canComplete = !product.nutrients.isUsable || product.tacoName != null) }
+        if (product.tacoName != null) {
+            item {
+                Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.secondaryContainer, modifier = Modifier.fillMaxWidth()) {
+                    Text(
+                        "A ficha deste produto estava incompleta. Os dados que faltavam foram completados com a tabela TACO (Unicamp), " +
+                            "usando \"${product.tacoName}\" — são valores aproximados.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer,
+                        modifier = Modifier.padding(Space.md),
+                    )
+                }
+            }
+        }
         if (hits.isNotEmpty()) item { RestrictionCard(hits) }
         if (result.lupa.isNotEmpty()) item { LupaRow(result.lupa) }
         if (result.positives.isNotEmpty() || result.negatives.isNotEmpty()) {
@@ -236,7 +249,7 @@ private fun ProductContent(
         item {
             Text(
                 "Nota calculada pelo app a partir do rótulo, apenas informativa — não substitui orientação de nutricionista. " +
-                    "Dados de produtos: Open Food Facts (licença ODbL), preenchidos por voluntários; confira sempre a embalagem.",
+                    "Dados de produtos: Open Food Facts (licença ODbL), preenchidos por voluntários; complementos: TACO 4ª ed. (NEPA/UNICAMP). Confira sempre a embalagem.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(vertical = Space.lg),
