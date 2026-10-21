@@ -269,21 +269,32 @@ private fun ScoreCard(r: ScoreResult, goal: Goal, onComplete: () -> Unit, canCom
             ScoreRing(r.value, r.band, 112.dp, stroke = 10.dp)
             Spacer(Modifier.width(Space.lg))
             Column(Modifier.weight(1f)) {
+                val faltam = r.missing.joinToString(", ")
                 if (r.value != null) {
                     Text(r.band?.label ?: "", style = MaterialTheme.typography.headlineSmall, color = c.onContainer)
-                    Text("Nota de 0 a 100", style = MaterialTheme.typography.bodySmall, color = c.onContainer)
+                    Text(
+                        if (r.estimated) "Nota estimada (0 a 100)" else "Nota de 0 a 100",
+                        style = MaterialTheme.typography.bodySmall, color = c.onContainer,
+                    )
                     Spacer(Modifier.height(Space.sm))
                     Text("Objetivo: ${goal.label}", style = MaterialTheme.typography.labelLarge, color = c.onContainer)
+                    if (r.estimated) {
+                        Spacer(Modifier.height(Space.sm))
+                        Text(
+                            "A ficha deste produto não informa: $faltam. Complete com a embalagem para a nota exata.",
+                            style = MaterialTheme.typography.bodySmall, color = c.onContainer,
+                        )
+                    }
                 } else {
                     Text("Sem nota", style = MaterialTheme.typography.titleLarge, color = c.onContainer)
                     Text(
-                        "Faltam dados da tabela nutricional (calorias, açúcares, gordura saturada e sódio).",
+                        "A ficha deste produto não informa: $faltam.",
                         style = MaterialTheme.typography.bodySmall, color = c.onContainer,
                     )
-                    if (canComplete) {
-                        Spacer(Modifier.height(Space.sm))
-                        OutlinedButton(onClick = onComplete) { Text("Completar dados") }
-                    }
+                }
+                if (canComplete) {
+                    Spacer(Modifier.height(Space.sm))
+                    OutlinedButton(onClick = onComplete) { Text("Completar dados") }
                 }
             }
         }

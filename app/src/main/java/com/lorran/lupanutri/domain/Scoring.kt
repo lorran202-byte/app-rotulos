@@ -25,6 +25,9 @@ data class ScoreResult(
     val positives: List<String>,
     val negatives: List<String>,
     val lupa: List<Lupa>,
+    /** Nota calculada com dados faltando (o que falta fica em [missing]). */
+    val estimated: Boolean = false,
+    val missing: List<String> = emptyList(),
 )
 
 private class Weights(
@@ -119,15 +122,20 @@ object Scorer {
             pos += "Sem aditivos na lista"
         }
 
-        if (!n.isUsable) return ScoreResult(null, null, pos, neg, lupa)
+        val missing = n.missingCore
+        if (!n.isUsable && !n.canEstimate) return ScoreResult(null, null, pos, neg, lupa, missing = missing)
+        val estimated = !n.isUsable
 
         // ---- nota ----
         var s = 100.0
         val kcal = n.kcal ?: 0.0
         s -= ((kcal - (if (liq) 20.0 else 120.0)) / (if (liq) 8.0 else 20.0)).coerceIn(0.0, 12.0) * w.kcal
-        val sug = n.sugars ?: n.addedSugars ?: (n.carbs?.let { it * 0.3 } ?: 0.0)
+        // Sem açúcares informados: em bebidas os carboidratos são quase todos açúcar; em sólidos não dá para supor.
+        val sug = n.sugars ?: n.addedSugars ?: (if (liq) n.carbs else null) ?: 0.0
+        // Sem gordura saturada mas com gordura total: estima ~1/3 da gordura total.
+        val sat = n.satFat ?: n.fat?.let { it / 3.0 } ?: 0.0
         s -= (sug * (if (liq) 3.0 else 0.9)).coerceIn(0.0, if (liq) 35.0 else 25.0) * w.sugar
-        s -= ((n.satFat ?: 0.0) * 2.5).coerceIn(0.0, 16.0) * w.sat
+        s -= (sat * 2.5).coerceIn(0.0, 16.0) * w.sat
         s -= (((n.sodiumMg ?: 0.0) - 80.0) / 35.0).coerceIn(0.0, 25.0) * w.sodium
         if ((n.transFat ?: 0.0) > 0.1) s -= 8.0
         s -= lupa.size * 10.0
@@ -148,7 +156,7 @@ object Scorer {
         s += (((n.protein ?: 0.0) * 0.5).coerceAtMost(8.0) * w.protein).coerceAtMost(16.0)
 
         val value = s.roundToInt().coerceIn(0, 100)
-        return ScoreResult(value, bandOf(value), pos, neg, lupa)
+        return ScoreResult(value, bandOf(value), pos, neg, lupa, estimated = estimated, missing = missing)
     }
 
     fun fmt(v: Double): String =

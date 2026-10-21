@@ -70,10 +70,10 @@ fun ScoreRing(score: Int?, band: Band?, size: Dp, stroke: Dp = 8.dp) {
 }
 
 @Composable
-fun BandChip(band: Band?) {
+fun BandChip(band: Band?, estimated: Boolean = false) {
     val c = bandColors(band)
     Text(
-        text = band?.label ?: "Sem nota",
+        text = (band?.label ?: "Sem nota") + if (band != null && estimated) " · estimada" else "",
         style = MaterialTheme.typography.labelLarge,
         color = c.onContainer,
         modifier = Modifier
@@ -132,7 +132,7 @@ fun ProductRow(
                 Text(sub, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
             Spacer(Modifier.height(Space.xs))
-            BandChip(result.band)
+            BandChip(result.band, result.estimated)
         }
         Spacer(Modifier.width(Space.sm))
         ScoreRing(result.value, result.band, 48.dp, stroke = 5.dp)

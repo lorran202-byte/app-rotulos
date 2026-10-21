@@ -67,7 +67,7 @@ class ProductViewModel(
     }
 
     private fun loadAlternatives(p: Product) {
-        if (p.isManual || p.categories.isEmpty() || !p.nutrients.isUsable) {
+        if (p.isManual || p.categories.isEmpty() || !(p.nutrients.isUsable || p.nutrients.canEstimate)) {
             _alts.value = AltUi.Hidden
             return
         }

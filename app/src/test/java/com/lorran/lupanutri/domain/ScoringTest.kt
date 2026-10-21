@@ -61,4 +61,16 @@ class ScoringTest {
         assertEquals(Match.NAO_CONTEM, Restrictions.check(melancia, Restriction.ACUCAR))
         assertEquals(Match.DESCONHECIDO, Restrictions.check(p(Nutrients()), Restriction.SOJA))
     }
+
+    @Test fun estimada_com_ficha_incompleta() {
+        val flocao = p(Nutrients(kcal = 168.0, carbs = 39.0, protein = 3.0, fiber = 1.0))
+        val r = Scorer.score(flocao, Goal.EQUILIBRIO)
+        assertTrue(r.value != null && r.estimated)
+        assertEquals(listOf("açúcares", "gordura saturada", "sódio"), r.missing)
+        val completo = Scorer.score(soda, Goal.EQUILIBRIO)
+        assertTrue(!completo.estimated)
+        // bebida sem açúcar informado usa os carboidratos
+        val suco = p(Nutrients(kcal = 45.0, carbs = 11.0, sodiumMg = 5.0), liquid = true)
+        assertTrue(Scorer.score(suco, Goal.EQUILIBRIO).value!! < 75)
+    }
 }

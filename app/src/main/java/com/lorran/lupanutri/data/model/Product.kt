@@ -15,7 +15,21 @@ data class Nutrients(
 ) {
     /** Tem o mínimo para calcular uma nota. */
     val isUsable: Boolean
-        get() = kcal != null && (sugars != null || carbs != null) && satFat != null && sodiumMg != null
+        get() = kcal != null && (sugars != null || addedSugars != null) && satFat != null && sodiumMg != null
+
+    /** Nomes dos dados principais que faltam para uma nota completa. */
+    val missingCore: List<String>
+        get() = buildList {
+            if (kcal == null) add("calorias")
+            if (sugars == null && addedSugars == null) add("açúcares")
+            if (satFat == null) add("gordura saturada")
+            if (sodiumMg == null) add("sódio")
+        }
+
+    /** Dá para estimar: tem calorias e pelo menos 2 outros nutrientes. */
+    val canEstimate: Boolean
+        get() = kcal != null &&
+            listOf(carbs, sugars ?: addedSugars, protein, fat, satFat, fiber, sodiumMg).count { it != null } >= 2
 }
 
 data class Product(

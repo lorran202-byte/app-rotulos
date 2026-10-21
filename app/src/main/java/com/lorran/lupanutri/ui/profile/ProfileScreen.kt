@@ -137,6 +137,7 @@ fun ProfileScreen(app: LupaApp) {
                     "perde pontos com calorias, açúcares, gordura saturada, sódio, gordura trans, ultraprocessamento, aditivos e adoçantes, " +
                     "e ganha com fibras, proteína e alimentos in natura. Os alertas de lupa seguem os limites da rotulagem brasileira.\n\n" +
                     "Faixas: 75–100 Ótimo · 55–74 Bom · 30–54 Ruim · 0–29 Evite.\n\n" +
+                    "Quando a ficha do produto não traz todos os dados, a nota aparece como estimada; use \"Completar dados\" para corrigir.\n\n" +
                     "É uma ferramenta informativa e não substitui a orientação de um nutricionista ou médico. " +
                     "Os dados dos produtos vêm do Open Food Facts (licença ODbL), uma base aberta mantida por voluntários — " +
                     "em caso de alergia, confira sempre a embalagem.",
