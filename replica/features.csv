@@ -1,22 +1,22 @@
 id,tela,funcao,prioridade,status
-F01,Scanner,Ler código de barras com a câmera,must,todo
-F02,Scanner,Digitar o código manualmente,must,todo
-F03,Produto,Nota de 0 a 100 com cor e rótulo,must,todo
-F04,Produto,Pontos positivos e negativos,must,todo
-F05,Produto,Alertas da lupa (açúcar adicionado / gordura saturada / sódio),must,todo
-F06,Produto,Ingredientes e tabela nutricional por 100 g,must,todo
-F07,Produto,Aditivos encontrados,should,todo
-F08,Produto,Aviso de restrição do usuário (glúten / lactose / etc.),must,todo
-F09,Histórico,Lista dos produtos escaneados,must,todo
-F10,Favoritos,Salvar e listar favoritos,must,todo
-F11,Perfil,Objetivo que muda a nota,should,todo
-F12,Perfil,Restrições alimentares,must,todo
-F13,Busca,Buscar por nome ou marca,should,todo
-F14,Produto,Alternativas melhores da mesma categoria,should,todo
+F01,Scanner,Ler código de barras com a câmera,must,feito
+F02,Scanner,Digitar o código manualmente,must,feito
+F03,Produto,Nota de 0 a 100 com cor e rótulo,must,feito
+F04,Produto,Pontos positivos e negativos,must,feito
+F05,Produto,Alertas da lupa (açúcar adicionado / gordura saturada / sódio),must,feito
+F06,Produto,Ingredientes e tabela nutricional por 100 g,must,feito
+F07,Produto,Aditivos encontrados,should,feito
+F08,Produto,Aviso de restrição do usuário (glúten / lactose / etc.),must,feito
+F09,Histórico,Lista dos produtos escaneados,must,feito
+F10,Favoritos,Salvar e listar favoritos,must,feito
+F11,Perfil,Objetivo que muda a nota,should,feito
+F12,Perfil,Restrições alimentares,must,feito
+F13,Busca,Buscar por nome ou marca,should,feito
+F14,Produto,Alternativas melhores da mesma categoria,should,feito
 F15,Lista,Lista de compras,could,todo
-F16,Cadastro,Cadastrar produto que não está na base (manual),should,todo
-F17,Produto,Compartilhar nota do produto,could,todo
-F18,Geral,Funciona sem login e sem limite diário,must,todo
-F19,Geral,Cache offline dos produtos já vistos,should,todo
+F16,Cadastro,Cadastrar produto que não está na base (manual),should,feito
+F17,Produto,Compartilhar nota do produto,could,feito
+F18,Geral,Funciona sem login e sem limite diário,must,feito
+F19,Geral,Cache offline dos produtos já vistos,should,feito
 F20,Conteúdo,Conteúdo semanal de especialistas,could,fora
 F21,Base,Base própria de produtos do original,could,fora
