@@ -7,4 +7,5 @@
     </style>
     <color name="splash_bg">#FFF7F4EC</color>
     <color name="ic_bg">#FF14513A</color>
+    <color name="splash_bg_night">#FF101512</color>
 </resources>

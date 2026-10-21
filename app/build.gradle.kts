@@ -17,6 +17,8 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+        // Celulares Android atuais (ARM); deixa o APK bem menor.
+        ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a") }
     }
 
     signingConfigs {
