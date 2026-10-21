@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -23,7 +25,7 @@ android {
             val ksFile = rootProject.file("keystore/lupanutri.jks")
             val propsFile = rootProject.file("keystore/keystore.properties")
             if (ksFile.exists() && propsFile.exists()) {
-                val props = java.util.Properties().apply { propsFile.inputStream().use { load(it) } }
+                val props = Properties().apply { propsFile.inputStream().use { load(it) } }
                 storeFile = ksFile
                 storePassword = props.getProperty("storePassword")
                 keyAlias = props.getProperty("keyAlias")
