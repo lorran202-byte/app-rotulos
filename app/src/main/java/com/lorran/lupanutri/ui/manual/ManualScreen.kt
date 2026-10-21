@@ -150,7 +150,7 @@ class ManualViewModel(private val repo: ProductRepository, private val code: Str
 }
 
 @Composable
-fun ManualScreen(app: LupaApp, code: String, onBack: () -> Unit, onSaved: () -> Unit) {
+fun ManualScreen(app: LupaApp, code: String, onBack: () -> Unit, onSaved: () -> Unit, onDeleted: () -> Unit) {
     val vm: ManualViewModel = viewModel(key = "manual-$code") { ManualViewModel(app.repository, code) }
     val ready by vm.ready.collectAsStateWithLifecycle()
     val f = vm.form
@@ -164,7 +164,7 @@ fun ManualScreen(app: LupaApp, code: String, onBack: () -> Unit, onSaved: () -> 
                 title = { Text(if (isEdit) "Editar produto" else "Cadastrar produto") },
                 navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Outlined.ArrowBack, "Voltar") } },
                 actions = {
-                    if (isEdit) IconButton(onClick = { vm.delete(onBack) }) { Icon(Icons.Outlined.Delete, "Apagar cadastro") }
+                    if (isEdit) IconButton(onClick = { vm.delete(onDeleted) }) { Icon(Icons.Outlined.Delete, "Apagar cadastro") }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.background),
             )

@@ -37,11 +37,23 @@ jobs:
         run: ./gradlew lintRelease 2>&1 | tee lint.log
         continue-on-error: true
 
+      - name: Conferir APK
+        if: always()
+        run: |
+          BT=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
+          APK=$(ls app/build/outputs/apk/release/*.apk | head -1)
+          {
+            echo "== badging"; $BT/aapt2 dump badging "$APK" | grep -E "package:|sdkVersion|targetSdk|uses-permission|application-label|native-code"
+            echo "== assinatura"; $BT/apksigner verify --print-certs "$APK" | head -5
+            echo "== tamanho"; ls -lh "$APK"
+          } > apk-info.txt 2>&1 || true
+          cp apk-info.txt app/build/ 2>/dev/null || true
+
       - name: Publicar saída no branch "saida"
         if: always()
         run: |
           mkdir -p /tmp/out
-          cp build.log test.log lint.log /tmp/out/ 2>/dev/null || true
+          cp build.log test.log lint.log apk-info.txt /tmp/out/ 2>/dev/null || true
           cp app/build/outputs/apk/release/*.apk /tmp/out/ 2>/dev/null || true
           cp app/build/reports/lint-results-release.txt /tmp/out/ 2>/dev/null || true
           cd /tmp/out

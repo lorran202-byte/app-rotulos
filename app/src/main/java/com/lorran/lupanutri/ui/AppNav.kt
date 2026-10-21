@@ -125,6 +125,10 @@ fun AppNav(app: LupaApp) {
                         if (nav.currentBackStackEntry?.destination?.route == "product/{code}") nav.popBackStack()
                         nav.openProduct(code)
                     },
+                    onDeleted = {
+                        nav.popBackStack()
+                        if (nav.currentBackStackEntry?.destination?.route == "product/{code}") nav.popBackStack()
+                    },
                 )
             }
         }
